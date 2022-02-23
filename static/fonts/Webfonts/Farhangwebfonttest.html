@@ -1,0 +1,213 @@
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=9">
+	<title>farhang</title>
+	<style type="text/css" media="screen">
+		@font-face { font-family: 'WOFF farhang-thin'; src: url('fonts/woff/farhang-thin.woff'); }
+		@font-face { font-family: 'WOFF farhang-extralight'; src: url('fonts/woff/farhang-extralight.woff'); }
+		@font-face { font-family: 'WOFF farhang-light'; src: url('fonts/woff/farhang-light.woff'); }
+		@font-face { font-family: 'WOFF farhang-regular'; src: url('fonts/woff/farhang-regular.woff'); }
+		@font-face { font-family: 'WOFF farhang-medium'; src: url('fonts/woff/farhang-medium.woff'); }
+		@font-face { font-family: 'WOFF farhang-demibold'; src: url('fonts/woff/farhang-demibold.woff'); }
+		@font-face { font-family: 'WOFF farhang-bold'; src: url('fonts/woff/farhang-bold.woff'); }
+		@font-face { font-family: 'WOFF farhang-extrabold'; src: url('fonts/woff/farhang-extrabold.woff'); }
+		@font-face { font-family: 'WOFF farhang-black'; src: url('fonts/woff/farhang-black.woff'); }
+		@font-face { font-family: 'WOFF2 farhang-thin'; src: url('fonts/woff2/farhang-thin.woff2'); }
+		@font-face { font-family: 'WOFF2 farhang-extralight'; src: url('fonts/woff2/farhang-extralight.woff2'); }
+		@font-face { font-family: 'WOFF2 farhang-light'; src: url('fonts/woff2/farhang-light.woff2'); }
+		@font-face { font-family: 'WOFF2 farhang-regular'; src: url('fonts/woff2/farhang-regular.woff2'); }
+		@font-face { font-family: 'WOFF2 farhang-medium'; src: url('fonts/woff2/farhang-medium.woff2'); }
+		@font-face { font-family: 'WOFF2 farhang-demibold'; src: url('fonts/woff2/farhang-demibold.woff2'); }
+		@font-face { font-family: 'WOFF2 farhang-bold'; src: url('fonts/woff2/farhang-bold.woff2'); }
+		@font-face { font-family: 'WOFF2 farhang-extrabold'; src: url('fonts/woff2/farhang-extrabold.woff2'); }
+		@font-face { font-family: 'WOFF2 farhang-black'; src: url('fonts/woff2/farhang-black.woff2'); }
+		@font-face { font-family: 'EOT farhang-thin'; src: url('fonts/eot/farhang-thin.eot'); }
+		@font-face { font-family: 'EOT farhang-extralight'; src: url('fonts/eot/farhang-extralight.eot'); }
+		@font-face { font-family: 'EOT farhang-light'; src: url('fonts/eot/farhang-light.eot'); }
+		@font-face { font-family: 'EOT farhang-regular'; src: url('fonts/eot/farhang-regular.eot'); }
+		@font-face { font-family: 'EOT farhang-medium'; src: url('fonts/eot/farhang-medium.eot'); }
+		@font-face { font-family: 'EOT farhang-demibold'; src: url('fonts/eot/farhang-demibold.eot'); }
+		@font-face { font-family: 'EOT farhang-bold'; src: url('fonts/eot/farhang-bold.eot'); }
+		@font-face { font-family: 'EOT farhang-extrabold'; src: url('fonts/eot/farhang-extrabold.eot'); }
+		@font-face { font-family: 'EOT farhang-black'; src: url('fonts/eot/farhang-black.eot'); }
+		
+		body { 
+			font-family: "WOFF farhang-thin"; 
+			font-feature-settings: "kern" on, "liga" on, "calt" on;
+			-moz-font-feature-settings: "kern" on, "liga" on, "calt" on;
+			-webkit-font-feature-settings: "kern" on, "liga" on, "calt" on;
+			-ms-font-feature-settings: "kern" on, "liga" on, "calt" on;
+			-o-font-feature-settings: "kern" on, "liga" on, "calt" on;
+		}
+		p { padding: 5px; margin: 10px; }
+		.features {
+			font-size:x-small;
+			font:sans-serif;
+		}
+		.label{
+			font-family: sans-serif;
+			font-size: x-small;
+			color: grey;
+		}
+		span#p08 { font-size: 10pt; }
+		span#p09 { font-size: 11pt; }
+		span#p10 { font-size: 12pt; }
+		span#p11 { font-size: 13pt; }
+		span#p12 { font-size: 14pt; }
+		span#p13 { font-size: 15pt; }
+		span#p14 { font-size: 16pt; }
+		span#p15 { font-size: 17pt; }
+		span#p16 { font-size: 18pt; }
+		span#largeParagraph { font-size: 36pt; }
+		span#veryLargeParagraph { font-size: 72pt; }		
+	</style>
+	<script type="text/javascript">
+		function updateParagraph() {
+			// update paragraph text based on user input:
+			var txt = document.getElementById('textInput');
+			var paragraphs = ['p08','p09','p10','p11','p12','p13','p14','p15','p16','largeParagraph','veryLargeParagraph'];
+			for (i = 0; i < paragraphs.length; i++) {
+				paragraphID = paragraphs[i];
+				var paragraph = document.getElementById(paragraphID);
+				paragraph.textContent = txt.value;
+			}
+		}
+		function updateFeatures() {
+			// update features based on user input:
+			// first, get feature on/off line:
+			var cssCode = "";
+			var codeLine = "";
+			var checkboxes = document.getElementsByClassName("otFeature")
+			for (i = 0; i < checkboxes.length; i++) {
+				var checkbox = checkboxes[i];
+				codeLine += '"'+checkbox.name+'" ';
+				codeLine += checkbox.checked ? 'on, ' : 'off, ';
+				if (checkbox.name=="kern") {
+					cssCode += "font-kerning: "
+					cssCode += checkbox.checked ? 'normal; ' : 'none; ';
+				} else if (checkbox.name=="liga") {
+					codeLine += '"clig" '
+					codeLine += checkbox.checked ? 'on, ' : 'off, ';
+					cssCode += "font-variant-ligatures: "
+					cssCode += checkbox.checked ? 'common-ligatures contextual; ' : 'no-common-ligatures no-contextual; ';
+				} else if (checkbox.name=="dlig") {
+					cssCode += "font-variant-ligatures: "
+					cssCode += checkbox.checked ? 'discretionary-ligatures; ' : 'no-discretionary-ligatures; ';
+				} else if (checkbox.name=="hlig") {
+					cssCode += "font-variant-ligatures: "
+					cssCode += checkbox.checked ? 'historical-ligatures; ' : 'no-historical-ligatures; ';
+				}
+			}
+			codeLine = codeLine.slice(0, -2)
+			
+			// then, apply line for every browser:
+			var prefixes = ["","-moz-","-webkit-","-ms-","-o-",];
+			var suffix = "font-feature-settings: "
+			for (i = 0; i < prefixes.length; i++) {
+				var prefix = prefixes[i];
+				cssCode += prefix
+				cssCode += suffix
+				cssCode += codeLine
+				cssCode += "; "
+			}
+			
+			document.getElementById('fontTestBody').style.cssText = cssCode;
+			document.getElementById('featureLine').innerHTML = cssCode.replace(/;/g,";<br/>");
+			changeFont();
+		}
+		function changeFont() {
+			var selector = document.getElementById('fontFamilySelector');
+			var selected_index = selector.selectedIndex;
+			var selected_option_text = selector.options[selected_index].text;
+			document.getElementById('fontTestBody').style.fontFamily = selected_option_text;
+		}
+		function setDefaultText(defaultText) {
+			document.getElementById('textInput').value = decodeEntities(defaultText);
+			updateParagraph();
+		}
+		function setLat1() {
+			var lat1 = "abcdefghijklm nopqrstuvwxyz ABCDEFGHIJKLM NOPQRSTUVWXYZ &Agrave;&Aacute;&Acirc;&Atilde;&Auml;&Aring;&AElig;&Ccedil;&Egrave;&Eacute;&Ecirc;&Euml;&Igrave;&Iacute;&Icirc;&Iuml;&ETH;&Ntilde;&Ograve;&Oacute;&Ocirc;&Otilde;&Ouml;&Oslash;&OElig;&THORN;&Ugrave;&Uacute;&Ucirc;&Uuml;&Yacute;&Yuml; &agrave;&aacute;&acirc;&atilde;&auml;&aring;&aelig;&ccedil;&egrave;&eacute;&ecirc;&euml;&igrave;&iacute;&icirc;&iuml;&eth;&ntilde;&ograve;&oacute;&ocirc;&otilde;&ouml;&oslash;&oelig;&thorn;&szlig;&ugrave;&uacute;&ucirc;&uuml;&yacute;&yuml; .,:;&middot;&hellip;&iquest;?&iexcl;!&laquo;&raquo;&lsaquo;&rsaquo; /|&brvbar;\()[]{}_-&ndash;&mdash;&sbquo;&bdquo;&lsquo;&rsquo;&ldquo;&rdquo;&quot;&#x27; #&amp;&sect;@&bull;&shy;*&dagger;&Dagger;&para; +&times;&divide;&plusmn;=&lt;&gt;&not;&mu; ^~&acute;`&circ;&macr;&tilde;&uml;&cedil; &yen;&euro;&pound;$&cent;&curren;&fnof; &trade;&reg;&copy; 1234567890 &ordf;&ordm;&deg;%&permil; &sup1;&sup2;&sup3;&frac14;&frac12;&frac34;";
+			return setDefaultText(lat1);
+		}
+		function setCharset() {
+			var completeCharSet = "&#x0041; &#x0042; &#x0043; &#x0044; &#x0045; &#x0046; &#x0047; &#x0048; &#x0049; &#x004A; &#x004B; &#x004C; &#x004D; &#x004E; &#x004F; &#x0050; &#x0051; &#x0052; &#x0053; &#x0054; &#x0055; &#x0056; &#x0057; &#x0058; &#x0059; &#x005A; &#x0061; &#x0062; &#x0063; &#x0064; &#x0065; &#x0066; &#x0067; &#x0068; &#x0069; &#x006A; &#x006B; &#x006C; &#x006D; &#x006E; &#x006F; &#x0070; &#x0071; &#x0072; &#x0073; &#x0074; &#x0075; &#x0076; &#x0077; &#x0078; &#x0079; &#x007A; &#x0621; &#x0627; &#xFE8E; &#x0623; &#xFE84; &#x0625; &#xFE88; &#x0622; &#xFE82; &#x0671; &#xFB51; &#x066E; &#x0628; &#xFE90; &#xFE92; &#xFE91; &#x067E; &#xFB57; &#xFB59; &#xFB58; &#x062A; &#xFE96; &#xFE98; &#xFE97; &#x062B; &#xFE9A; &#xFE9C; &#xFE9B; &#x062C; &#xFE9E; &#xFEA0; &#xFE9F; &#x0686; &#xFB7B; &#xFB7D; &#xFB7C; &#x062D; &#xFEA2; &#xFEA4; &#xFEA3; &#x062E; &#xFEA6; &#xFEA8; &#xFEA7; &#x062F; &#xFEAA; &#x0630; &#xFEAC; &#x0631; &#xFEAE; &#x0632; &#xFEB0; &#x0698; &#xFB8B; &#x0633; &#xFEB2; &#xFEB4; &#xFEB3; &#x0634; &#xFEB6; &#xFEB8; &#xFEB7; &#x0635; &#xFEBA; &#xFEBC; &#xFEBB; &#x0636; &#xFEBE; &#xFEC0; &#xFEBF; &#x0637; &#xFEC2; &#xFEC4; &#xFEC3; &#x0638; &#xFEC6; &#xFEC8; &#xFEC7; &#x0639; &#xFECA; &#xFECC; &#xFECB; &#x063A; &#xFECE; &#xFED0; &#xFECF; &#x0641; &#xFED2; &#xFED4; &#xFED3; &#x06A4; &#xFB6B; &#xFB6D; &#xFB6C; &#x06A1; &#x066F; &#x0642; &#xFED6; &#xFED8; &#xFED7; &#x0643; &#xFEDA; &#xFEDC; &#xFEDB; &#x06A9; &#xFB8F; &#xFB91; &#xFB90; &#x06AF; &#xFB93; &#xFB95; &#xFB94; &#x0644; &#xFEDE; &#xFEE0; &#xFEDF; &#x0645; &#xFEE2; &#xFEE4; &#xFEE3; &#x0646; &#xFEE6; &#xFEE8; &#xFEE7; &#x06BA; &#xFB9F; &#x0647; &#xFEEA; &#xFEEC; &#xFEEB; &#x06C0; &#xFBA4; &#xFBA5; &#x0629; &#xFE94; &#x0648; &#xFEEE; &#x0624; &#xFE86; &#x0649; &#xFEF0; &#x064A; &#xFEF2; &#xFEF4; &#xFEF3; &#x0626; &#xFE8A; &#xFE8C; &#xFE8B; &#x06CC; &#xFBFD; &#xFBFF; &#xFBFE; &#x0640; &#xFEFB; &#xFEFC; &#xFEF7; &#xFEF8; &#xFEF9; &#xFEFA; &#xFEF5; &#xFEF6; &#xFDF2; &#x0030; &#x0031; &#x0032; &#x0033; &#x0034; &#x0035; &#x0036; &#x0037; &#x0038; &#x0039; &#x066B; &#x066C; &#x0660; &#x0661; &#x0662; &#x0663; &#x0664; &#x0665; &#x0666; &#x0667; &#x0668; &#x0669; &#x06F0; &#x06F1; &#x06F2; &#x06F3; &#x06F4; &#x06F5; &#x06F6; &#x06F7; &#x06F8; &#x06F9; &#x002E; &#x002C; &#x003A; &#x003B; &#x0021; &#x003F; &#x002A; &#x0023; &#x002F; &#x005C; &#x0028; &#x0029; &#x007B; &#x007D; &#x005B; &#x005D; &#x002D; &#x005F; &#x201E; &#x201C; &#x201D; &#x2018; &#x2019; &#x00AB; &#x00BB; &#x2039; &#x203A; &#x0022; &#x0027; &#x060C; &#x061B; &#x061F; &#x066D; &#xFD3E; &#xFD3F; &#x200A; &#x0020; &#x00A0; &#x2009; &#x200B; &#x200D; &#x200C; &#x000D; &#xFEFF; &#xFDFC; &#x0024; &#x002B; &#x2212; &#x00D7; &#x00F7; &#x003D; &#x2260; &#x0025; &#x0040; &#x0026; &#x066A; &#xFBB2; &#xFBB3; &#xFBB4; &#xFBB5; &#xFBB9; &#xFBB6; &#x0670; &#x0656; &#x0654; &#x0655; &#x064B; &#x064C; &#x064D; &#x064E; &#x064F; &#x0650; &#x0651; &#x0652; &#x0653;";
+			setDefaultText(completeCharSet);
+		}
+		function decodeEntities(string){
+			var elem = document.createElement('div');
+			elem.innerHTML = string;
+			return elem.textContent;
+		}
+	</script>
+</head>
+<body id="fontTestBody">
+	<select size="1" id="fontFamilySelector" name="fontFamilySelector" onchange="changeFont()">
+		<option value="farhang-thin.woff">WOFF farhang-thin</option>
+		<option value="farhang-extralight.woff">WOFF farhang-extralight</option>
+		<option value="farhang-light.woff">WOFF farhang-light</option>
+		<option value="farhang-regular.woff">WOFF farhang-regular</option>
+		<option value="farhang-medium.woff">WOFF farhang-medium</option>
+		<option value="farhang-demibold.woff">WOFF farhang-demibold</option>
+		<option value="farhang-bold.woff">WOFF farhang-bold</option>
+		<option value="farhang-extrabold.woff">WOFF farhang-extrabold</option>
+		<option value="farhang-black.woff">WOFF farhang-black</option>
+		<option value="farhang-thin.woff2">WOFF2 farhang-thin</option>
+		<option value="farhang-extralight.woff2">WOFF2 farhang-extralight</option>
+		<option value="farhang-light.woff2">WOFF2 farhang-light</option>
+		<option value="farhang-regular.woff2">WOFF2 farhang-regular</option>
+		<option value="farhang-medium.woff2">WOFF2 farhang-medium</option>
+		<option value="farhang-demibold.woff2">WOFF2 farhang-demibold</option>
+		<option value="farhang-bold.woff2">WOFF2 farhang-bold</option>
+		<option value="farhang-extrabold.woff2">WOFF2 farhang-extrabold</option>
+		<option value="farhang-black.woff2">WOFF2 farhang-black</option>
+		<option value="farhang-thin.eot">EOT farhang-thin</option>
+		<option value="farhang-extralight.eot">EOT farhang-extralight</option>
+		<option value="farhang-light.eot">EOT farhang-light</option>
+		<option value="farhang-regular.eot">EOT farhang-regular</option>
+		<option value="farhang-medium.eot">EOT farhang-medium</option>
+		<option value="farhang-demibold.eot">EOT farhang-demibold</option>
+		<option value="farhang-bold.eot">EOT farhang-bold</option>
+		<option value="farhang-extrabold.eot">EOT farhang-extrabold</option>
+		<option value="farhang-black.eot">EOT farhang-black</option>
+	</select>
+	<input type="text" value="Type Text Here." id="textInput" onclick="this.select();" onkeyup="updateParagraph()" size="80" />
+	<p class="features">
+		<a href="javascript:setCharset();">Charset</a>
+
+		&emsp;
+
+		
+	</p>
+	<p class="features" id="featureLine" style="display:none;">font-feature-settings: "kern" on, "liga" on, "calt" on;</p>
+	<p><span class="label">10</span> <span id="p08">
+تَوانا بُوَد هرکه دانا بُوَد 
+زِدانش دلِ پیر بُرنا بُود	</span></p>
+	<p><span class="label">11</span> <span id="p09">
+تَوانا بُوَد هرکه دانا بُوَد 
+زِدانش دلِ پیر بُرنا بُود	</span></p>
+	<p><span class="label">12</span> <span id="p10">
+تَوانا بُوَد هرکه دانا بُوَد 
+زِدانش دلِ پیر بُرنا بُود	</span></p>
+	<p><span class="label">13</span> <span id="p11">
+تَوانا بُوَد هرکه دانا بُوَد 
+زِدانش دلِ پیر بُرنا بُود	</span></p>
+	<p><span class="label">14</span> <span id="p12">
+تَوانا بُوَد هرکه دانا بُوَد 
+زِدانش دلِ پیر بُرنا بُود	</span></p>
+	<p><span class="label">15</span> <span id="p13">
+تَوانا بُوَد هرکه دانا بُوَد 
+زِدانش دلِ پیر بُرنا بُود	</span></p>
+	<p><span class="label">16</span> <span id="p14">
+تَوانا بُوَد هرکه دانا بُوَد 
+زِدانش دلِ پیر بُرنا بُود	</span></p>
+	<p><span class="label">17</span> <span id="p15">
+تَوانا بُوَد هرکه دانا بُوَد 
+زِدانش دلِ پیر بُرنا بُود	</span></p>
+	<p><span class="label">18</span> <span id="p16">
+تَوانا بُوَد هرکه دانا بُوَد 
+زِدانش دلِ پیر بُرنا بُود	</span></p>
+	<p><span id="largeParagraph">تَوانا بُوَد هرکه دانا بُوَد 
+زِدانش دلِ پیر بُرنا بُود	</span></p>
+	<p><span id="veryLargeParagraph">تَوانا بُوَد هرکه دانا بُوَد 
+زِدانش دلِ پیر بُرنا بُود	</span></p>
+</body>

@@ -1,0 +1,189 @@
+{% extends "base/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+
+
+
+
+{% if all_product %}
+
+<section class="page-add" style="margin-bottom:0px">
+        <div class="container">
+            <h2 style="font-family: farhang;text-align: center"><svg style="color:green" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16">
+  <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
+</svg>
+            کالاها 
+            </h2>
+
+                <hr>
+        </div>
+    </section>
+
+
+<div class="logo-section spad" style="padding-top: 0px;">
+        <div class="logo-items owl-carousel">
+
+ {% for x in  all_product %}
+                   
+                        
+                        <div class="card">
+                            
+                            <a class="img-card" href="{% url 'one_product' x.pk %}">
+                            <img src="{{ x.photo.url }}" style="border-radius:15px" />
+                                <div class="top-left" style="background-color:red;border-radius:15px;padding:1%;color:white">{{ x.off }}%</div>
+                                     <div class="top-right" style="background-color:white;border-radius:15px;padding:1%;color:white">
+                                          {% for z in x.stars %}
+                                  <svg xmlns="http://www.w3.org/2000/svg" color="#F0A500" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+</svg>
+                            {% endfor %}
+
+
+                         {% for z in x.stars_left %}
+            <svg xmlns="http://www.w3.org/2000/svg" color="#F0A500" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+  <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+</svg>
+
+                            {% endfor %}
+
+
+   {% if x.verified %}
+                                            <svg style="color: cornflowerblue" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                                          <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+                                        </svg>
+{% endif %}
+
+                                     </div>
+                          </a>
+                <div class="product-text" style="text-align:center">
+                            <h6 style="font-family: vazir;text-align:center;">{{ x.name }}</h6>
+
+                            <p style="color: green;font-family: vazir;text-align:center;font-size:18px;font-weight: 700;margin-bottom:0px">{{ x.last_comma|floatformat }}|تومان</p>
+                            <del style="color: grey;font-family: vazir;text-align:center">{{ x.price_comma }}|تومان</del>
+                        </div>
+                         
+                        </div>
+             
+ {% endfor %}
+                
+        </div>
+    </div>
+
+
+{% endif %}
+
+
+
+ {% if all_shop %}
+
+ <section class="page-add">
+        <div class="container">
+            <h2 style="font-family: farhang;text-align: center"><svg xmlns="http://www.w3.org/2000/svg" style="color:#F05454" width="50" height="50" fill="currentColor" class="bi bi-shop-window" viewBox="0 0 16 16">
+  <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h12V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zm2 .5a.5.5 0 0 1 .5.5V13h8V9.5a.5.5 0 0 1 1 0V13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5a.5.5 0 0 1 .5-.5z"/>
+</svg> فروشگاه ها</h2>
+                <hr>
+        </div>
+    </section> 
+    
+
+  <div class="logo-section spad" style="padding-top: 0px;">
+        <div class="logo-items owl-carousel">
+
+ {% for x in all_shop %}
+                   
+                        
+                        <div class="card">
+                            
+                            <a class="img-card" href="{% url 'shop' x.slug %}">
+                            <img src="{{ x.image_head1.url }}" style="border-radius:15px" />
+                               {% if x.verified %}
+                                 <div class="top-left" style="background-color:white;border-radius:15px;padding:1%;color:white">
+                                        <svg style="color: cornflowerblue" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                                          <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+                                        </svg>  
+                                     
+                                     </div>
+                                       
+                                {% endif %}
+                              
+                                     <div class="top-right" style="background-color:white;border-radius:15px;padding:1%;color:white">
+                                          {% for z in x.stars %}
+                                  <svg xmlns="http://www.w3.org/2000/svg" color="#F0A500" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+</svg>
+                            {% endfor %}
+
+
+                         {% for z in x.stars_left %}
+            <svg xmlns="http://www.w3.org/2000/svg" color="#F0A500" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+  <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+</svg>
+
+                            {% endfor %}
+
+
+
+
+                                     </div>
+                          </a>
+                         <div class="product-text">
+                             <br>
+                            <h6 style="font-family: vazir;text-align:center;">{{ x.title }}</h6>
+                            <br>
+
+                        </div>
+                         
+                        </div>
+             
+ {% endfor %}
+                
+        </div>
+    </div>
+
+
+
+
+        {% endif %}
+
+<style>
+    
+    
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+</style>
+{% endblock %}

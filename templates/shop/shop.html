@@ -1,0 +1,971 @@
+{% extends "base/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% load static %}
+    <!-- Header Info Begin -->
+    <!--<div class="header-info">-->
+    <!--    <div class="container-fluid">-->
+    <!--        <div class="row">-->
+    <!--            <div class="col-md-4">-->
+    <!--                <div class="header-item">-->
+    <!--                    <img src="{% static 'img/icons/delivery.png' %}" alt="">-->
+    <!--                    <p style="font-family:vazir" >s{{ shop.head1 }}</p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="col-md-4 text-left text-lg-center">-->
+    <!--                <div class="header-item">-->
+    <!--                    <img src="{% static 'img/icons/voucher.png' %}" alt="">-->
+    <!--                    <p style="font-family:vazir">d{{ shop.head2 }}</p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="col-md-4 text-left text-xl-right">-->
+    <!--                <div class="header-item">-->
+    <!--                <img src="{% static 'img/icons/sales.png' %}" alt="">-->
+    <!--                <p style="font-family:vazir">{{ shop.head3 }}</p>-->
+    <!--            </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</div>-->
+    <!-- Header Info End -->
+    <!-- Header End -->
+
+ <div class="hero-image" >
+         <br>
+             <br>
+                 <br>
+                      <br>
+  <div style="text-align:center">
+  
+              {% if shop.verified %}
+                            <svg xmlns="http://www.w3.org/2000/svg" style="color: cornflowerblue" width="30" height="30" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                                <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+                            </svg>
+                        {% endif %}
+                                                {% for x in shop.stars %}
+                                  <svg xmlns="http://www.w3.org/2000/svg" color="#F0A500" width="30" height="30" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                      <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                  </svg>
+                            {% endfor %}
+
+
+                         {% for x in shop.stars_left %}
+                            <svg xmlns="http://www.w3.org/2000/svg" color="#F0A500" width="30" height="30" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                              <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                            </svg>
+
+                            {% endfor %}
+                        <hr>
+                            <h2 style="font-family: titr1;color:white">{{ shop.head_title }}</h2>
+                        <br>
+                            <h4 style="font-family: vazir;color: wheat;font-size:20px">{{ shop.head_description }}</h4>
+                           <br>
+                         <a href="{{ shop.head_link }}" style="font-family: vazir" class="primary-btn">دنبال کن</a>
+                         
+                       
+                            
+  </div>
+</div> 
+
+
+<!--<section id="banner">-->
+<!--    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">-->
+<!--        <ol class="carousel-indicators">-->
+<!--            <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>-->
+<!--            <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>-->
+<!--            <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>-->
+<!--        </ol>-->
+<!--        <div class="carousel-inner">-->
+<!--            <div class="carousel-item active">-->
+<!--                <img src="https://www.markuptag.com/images/slider-img-1.jpg" class="d-block w-100" alt="...">-->
+<!--                <div class="carousel-caption d-none d-md-block">-->
+<!--                    <h3>Web Development</h3>-->
+<!--                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>-->
+<!--                    <a href="#" class="btn btn-warning">Read More</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="carousel-item">-->
+<!--                <img src="https://www.markuptag.com/images/slider-img-1.jpg" class="d-block w-100" alt="...">-->
+<!--                <div class="carousel-caption d-none d-md-block">-->
+<!--                    <h3>Web Designing</h3>-->
+<!--                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>-->
+<!--                    <a href="#" class="btn btn-warning">Read More</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="carousel-item">-->
+<!--                <img src="https://www.markuptag.com/images/slider-img-1.jpg" class="d-block w-100" alt="...">-->
+<!--                <div class="carousel-caption d-none d-md-block">-->
+<!--                    <h3>App Development</h3>-->
+<!--                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>-->
+<!--                    <a href="#" class="btn btn-warning">Read More</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">-->
+<!--            <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--            <span class="visually-hidden">Previous</span>-->
+<!--        </a>-->
+<!--        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">-->
+<!--            <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--            <span class="visually-hidden">Next</span>-->
+<!--        </a>-->
+<!--    </div>-->
+<!--</section>-->
+
+<!-- Carousel -->
+<!--<div id="demo" class="carousel slide" data-bs-ride="carousel">-->
+
+  <!-- Indicators/dots -->
+<!--  <div class="carousel-indicators">-->
+<!--    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>-->
+<!--    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>-->
+<!--    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>-->
+<!--  </div>-->
+
+  <!-- The slideshow/carousel -->
+<!--  <div class="carousel-inner">-->
+<!--    <div class="carousel-item active">-->
+<!--      <img src="{{ shop.image_head1.url }}" alt="Los Angeles" class="d-block w-100">-->
+<!--    </div>-->
+<!--    <div class="carousel-item">-->
+<!--      <img src="{{ shop.image_head1.url }}" alt="Chicago" class="d-block w-100">-->
+<!--    </div>-->
+<!--    <div class="carousel-item">-->
+<!--      <img src="{{ shop.image_head1.url }}" alt="New York" class="d-block w-100">-->
+<!--    </div>-->
+<!--  </div>-->
+
+  <!-- Left and right controls/icons -->
+<!--  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">-->
+<!--    <span class="carousel-control-prev-icon"></span>-->
+<!--  </button>-->
+<!--  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">-->
+<!--    <span class="carousel-control-next-icon"></span>-->
+<!--  </button>-->
+<!--</div>-->
+
+<!--<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">-->
+<!--  <div class="carousel-indicators">-->
+<!--    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>-->
+<!--    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>-->
+<!--    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
+<!--  </div>-->
+<!--  <div class="carousel-inner">-->
+<!--    <div class="carousel-item active">-->
+<!--      <img src="{{ shop.image_head1.url }}" class="d-block w-100" alt="...">-->
+<!--      <div class="carousel-caption d-none d-md-block">-->
+<!--        <h5>First slide label</h5>-->
+<!--        <p>Some representative placeholder content for the first slide.</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="carousel-item">-->
+<!--      <img src="{{ shop.image_head1.url }}" class="d-block w-100" alt="...">-->
+<!--      <div class="carousel-caption d-none d-md-block">-->
+<!--        <h5>Second slide label</h5>-->
+<!--        <p>Some representative placeholder content for the second slide.</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="carousel-item">-->
+<!--      <img src="{{ shop.image_head1.url }}" class="d-block w-100" alt="...">-->
+<!--      <div class="carousel-caption d-none d-md-block">-->
+<!--        <h5>Third slide label</h5>-->
+<!--        <p>Some representative placeholder content for the third slide.</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">-->
+<!--    <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--    <span class="visually-hidden">Previous</span>-->
+<!--  </button>-->
+<!--  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">-->
+<!--    <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--    <span class="visually-hidden">Next</span>-->
+<!--  </button>-->
+<!--</div>-->
+
+
+    <!-- Hero Slider Begin -->
+    <!--<section class="hero-slider">-->
+    <!--    <div class="hero-items owl-carousel">-->
+    <!--        <div class="single-slider-item set-bg" data-setbg="{{ shop.image_head1.url }}">-->
+                
+    <!--            <div class="container">-->
+    <!--                <div class="row">-->
+    <!--                    <div class="col-lg-12">-->
+          
+                        <!--</div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        <div class="single-slider-item set-bg" data-setbg="{{ shop.image_head2.url }}">-->
+    <!--            <div class="container">-->
+    <!--                <div class="row">-->
+    <!--                    <div class="col-lg-12">-->
+
+    <!--                        <h2 style="font-family: titr1;font-size:50px">{{ shop.head_title }}</h2>-->
+    <!--                    <br>-->
+    <!--                        <h3 style="font-family: vazir;color: grey">{{ shop.head_description }}</h3>-->
+    <!--                       <br>-->
+    <!--                        <a href="{{ shop.head_link }}" style="font-family: vazir" class="primary-btn">دنبال کن</a>-->
+
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        <div class="single-slider-item set-bg" data-setbg="{{ shop.image_head3.url }}">-->
+    <!--            <div class="container">-->
+    <!--                <div class="row">-->
+    <!--                    <div class="col-lg-12">-->
+
+    <!--                       <h2 style="font-family: titr1;font-size:50px">{{ shop.head_title }}</h2>-->
+    <!--                    <br>-->
+    <!--                        <h3 style="font-family: vazir;color: grey">{{ shop.head_description }}</h3>-->
+    <!--                       <br>-->
+    <!--                     <a href="{{ shop.head_link }}"  style="font-family: vazir" class="primary-btn">دنبال کن</a>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</section>-->
+
+<br>
+
+    <section class="features-section spad" style="padding:0px">
+        <div class="features-ads">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="single-features-ads first" >
+                            <img src="{% static 'img/icons/f-delivery.png' %}" alt="">
+                            <h4 style="font-family:farhang">{{ shop.why_us1 }}</h4>
+                         
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="single-features-ads second">
+                            <img src="../../static/img/icons/coin.png" alt="">
+                            <h4 style="font-family:farhang">{{ shop.why_us2 }} </h4>
+                         
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="single-features-ads">
+                            <img src="{% static 'img/icons/chat.png' %}" alt="">
+                            <h4 style="font-family:farhang">{{ shop.why_us3 }}</h4>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       </section>
+       
+       
+
+
+ 
+    <section class="features-section spad" style=";padding:0px">
+<div class="container"  >
+    <div class="row g-3 mt-5 mb-5">
+        <div class="col-md-4" style="margin-top: 3%;margin-bottom: 3%;">
+            <div class="card">
+                <div > <img src="{{ shop.image_banner1.url }}"  style="border-radius:15px" alt="..."> </div>
+    
+            </div>
+        </div>
+        <div class="col-md-4" style="margin-top: 3%;margin-bottom: 3%;">
+            <div class="card">
+                <div> <img src="{{ shop.image_banner2.url }}"  style="border-radius:15px" alt="..."> </div>
+           
+            </div>
+        </div>
+        <div class="col-md-4" style="margin-top: 3%;margin-bottom: 3%;">
+            <div class="card">
+                <div > <img src="{{ shop.image_banner3.url }}" style="border-radius:15px" alt="..."> </div>
+           
+            </div>
+        </div>
+    </div>
+</div>
+
+ 
+    </section>
+ 
+ 
+
+    
+ 
+ 
+
+    {% if products %}
+    
+    <section class="page-add" style="margin-bottom:0px">
+        <div class="container">
+ <h3 style="font-family:titr1;">  <svg style="color:purple" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-clock-history" viewBox="0 0 16 16">
+  <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022l-.074.997zm2.004.45a7.003 7.003 0 0 0-.985-.299l.219-.976c.383.086.76.2 1.126.342l-.36.933zm1.37.71a7.01 7.01 0 0 0-.439-.27l.493-.87a8.025 8.025 0 0 1 .979.654l-.615.789a6.996 6.996 0 0 0-.418-.302zm1.834 1.79a6.99 6.99 0 0 0-.653-.796l.724-.69c.27.285.52.59.747.91l-.818.576zm.744 1.352a7.08 7.08 0 0 0-.214-.468l.893-.45a7.976 7.976 0 0 1 .45 1.088l-.95.313a7.023 7.023 0 0 0-.179-.483zm.53 2.507a6.991 6.991 0 0 0-.1-1.025l.985-.17c.067.386.106.778.116 1.17l-1 .025zm-.131 1.538c.033-.17.06-.339.081-.51l.993.123a7.957 7.957 0 0 1-.23 1.155l-.964-.267c.046-.165.086-.332.12-.501zm-.952 2.379c.184-.29.346-.594.486-.908l.914.405c-.16.36-.345.706-.555 1.038l-.845-.535zm-.964 1.205c.122-.122.239-.248.35-.378l.758.653a8.073 8.073 0 0 1-.401.432l-.707-.707z"/>
+  <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0v1z"/>
+  <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"/>
+</svg> آخرین محصولات</h3>
+<br>
+         <a href="{% url 'all_products' shop.slug %}">
+                                              <button class="btn btn-outline-info" type="submit"  style="font-family: farhang;font-size: 16px" name="action" value="add_cart">
+                تمام کالاهای این فروشگاه
+
+                  </button>
+                        </a>
+                        </div>
+               
+    <hr>
+        </div>
+    </section>
+    <!--background-image: url({% static 'img/purple.png' %});-->
+   <div class="logo-section spad" style="padding-top: 0px;">
+        <div class="logo-items owl-carousel">
+
+ {% for x in products %}
+                   
+                        
+                        <div class="card">
+                            
+                            <a class="img-card" href="{% url 'product-details' shop.slug x.pk %}">
+                                            <div id="yourContainer">
+                            <img src="{{ x.photo.url }}" style="border-radius:15px;width:100%;height:100%" />
+                            </div>
+                                <div class="top-left" style="background-color:red;border-radius:15px;padding:1%;color:white">{{ x.off }}%</div>
+                                     <div class="top-right" style="background-color:white;border-radius:15px;padding:1%;color:white">
+                                          {% for z in x.stars %}
+                                  <svg xmlns="http://www.w3.org/2000/svg" color="#F0A500" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+</svg>
+                            {% endfor %}
+
+
+                         {% for z in x.stars_left %}
+            <svg xmlns="http://www.w3.org/2000/svg" color="#F0A500" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+  <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+</svg>
+
+                            {% endfor %}
+
+
+   {% if x.verified %}
+                                            <svg style="color: cornflowerblue" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                                          <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+                                        </svg>
+{% endif %}
+
+                                     </div>
+                          </a>
+                               <div class="product-text" style="text-align:center">
+                            <h6 style="font-family: vazir;text-align:center;">{{ x.name }}</h6>
+
+                            <p style="color: green;font-family: vazir;text-align:center;font-size:18px;font-weight: 700;margin-bottom:0px">{{ x.last_comma }}|تومان</p>
+                            <del style="color: grey;font-family: vazir;text-align:center">{{ x.price_comma }}|تومان</del>
+                        </div>
+                         
+                        </div>
+             
+ {% endfor %}
+                
+        </div>
+    </div>
+
+    {% endif %}
+
+
+
+{% if off %}
+<section class="page-add" style="margin-bottom:0px">
+        <div class="container">
+            <h3 style="font-family: titr1;text-align: center"><svg style="color:green" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
+  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
+  <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
+</svg>
+            کالاهای پر تخفیف
+            </h3>
+
+                <hr>
+        </div>
+    </section>
+
+<div class="logo-section spad" style="padding-top: 0px;">
+        <div class="logo-items owl-carousel">
+
+ {% for x in off %}
+                   
+                        
+                        <div class="card">
+                            
+                            <a class="img-card" href="{% url 'product-details' shop.slug x.pk %}">
+                                            <div id="yourContainer">
+                            <img src="{{ x.photo.url }}" style="border-radius:15px;width:100%;height:100%" />
+                            </div>
+                                <div class="top-left" style="background-color:red;border-radius:15px;padding:1%;color:white">{{ x.off }}%</div>
+                                     <div class="top-right" style="background-color:white;border-radius:15px;padding:1%;color:white">
+                                          {% for z in x.stars %}
+                                  <svg xmlns="http://www.w3.org/2000/svg" color="#F0A500" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+</svg>
+                            {% endfor %}
+
+
+                         {% for z in x.stars_left %}
+            <svg xmlns="http://www.w3.org/2000/svg" color="#F0A500" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+  <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+</svg>
+
+                            {% endfor %}
+
+
+   {% if x.verified %}
+                                            <svg style="color: cornflowerblue" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                                          <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+                                        </svg>
+{% endif %}
+
+                                     </div>
+                          </a>
+                       <div class="product-text" style="text-align:center">
+                            <h6 style="font-family: vazir;text-align:center;">{{ x.name }}</h6>
+
+                            <p style="color: green;font-family: vazir;text-align:center;font-size:18px;font-weight: 700;margin-bottom:0px">{{ x.last_comma }}|تومان</p>
+                            <del style="color: grey;font-family: vazir;text-align:center">{{ x.price_comma }}|تومان</del>
+                        </div>
+                         
+                        </div>
+             
+ {% endfor %}
+                
+        </div>
+    </div>
+
+
+
+{% endif %}
+<br>
+<br>
+
+<section class="lookbok-section">
+        <div class="container-fluid">
+        
+            <div class="row" style="background-image:  url({% static 'img/part.jpg' %});">
+                      <div class="col-lg-5 offset-lg-1">
+                    <div class="lookbok-pic" style="width:50%;margin-left:25%">
+            <br>
+            <br>
+                        <img  style="border-radius:15px" src="{{ shop.image_banner1.url }}" alt="" >
+                                         <br>
+            <br>
+                    </div>
+                </div>
+                <div class="col-lg-4 offset-lg-1">
+                    <div class="lookbok-left">
+                        <div class="section-title">
+                            <h2 style="text-align: right;font-family:farhang;color:white">{{ shop.title_look }} </h2>
+                        </div>
+                        <p style="text-align: right;font-family:vazir;font-size:18px;color:wheat">{{ shop.description_look }}</p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+
+{% if rare %}
+<section class="page-add" style="margin-bottom:0px">
+        <div class="container">
+            <h3 style="font-family: titr1;text-align: center"><svg style="color: #F0A500" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-radioactive" viewBox="0 0 16 16">
+  <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1ZM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Z"/>
+  <path d="M9.653 5.496A2.986 2.986 0 0 0 8 5c-.61 0-1.179.183-1.653.496L4.694 2.992A5.972 5.972 0 0 1 8 2c1.222 0 2.358.365 3.306.992L9.653 5.496Zm1.342 2.324a2.986 2.986 0 0 1-.884 2.312 3.01 3.01 0 0 1-.769.552l1.342 2.683c.57-.286 1.09-.66 1.538-1.103a5.986 5.986 0 0 0 1.767-4.624l-2.994.18Zm-5.679 5.548 1.342-2.684A3 3 0 0 1 5.005 7.82l-2.994-.18a6 6 0 0 0 3.306 5.728ZM10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/>
+</svg>
+            کالاهای ویژه
+            </h3>
+
+                <hr>
+        </div>
+    </section>
+
+<div class="logo-section spad" style="padding-top: 0px;">
+        <div class="logo-items owl-carousel">
+
+ {% for x in rare %}
+                   
+                        
+                        <div class="card">
+                            
+                            <a class="img-card" href="{% url 'product-details' shop.slug x.pk %}">
+                                            <div id="yourContainer">
+                            <img src="{{ x.photo.url }}" style="border-radius:15px;width:100%;height:100%" />
+                            </div>
+                                <div class="top-left" style="background-color:red;border-radius:15px;padding:1%;color:white">{{ x.off }}%</div>
+                                     <div class="top-right" style="background-color:white;border-radius:15px;padding:1%;color:white">
+                                          {% for z in x.stars %}
+                                  <svg xmlns="http://www.w3.org/2000/svg" color="#F0A500" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+</svg>
+                            {% endfor %}
+
+
+                         {% for z in x.stars_left %}
+            <svg xmlns="http://www.w3.org/2000/svg" color="#F0A500" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+  <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+</svg>
+
+                            {% endfor %}
+
+
+   {% if x.verified %}
+                                            <svg style="color: cornflowerblue" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                                          <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+                                        </svg>
+{% endif %}
+
+                                     </div>
+                          </a>
+                <div class="product-text" style="text-align:center">
+                            <h6 style="font-family: vazir;text-align:center;">{{ x.name }}</h6>
+
+                            <p style="color: green;font-family: vazir;text-align:center;font-size:18px;font-weight: 700;margin-bottom:0px">{{ x.last_comma }}|تومان</p>
+                            <del style="color: grey;font-family: vazir;text-align:center">{{ x.price_comma }}|تومان</del>
+                        </div>
+                        
+                        </div>
+             
+ {% endfor %}
+                
+        </div>
+    </div>
+
+
+{% endif %}
+
+
+{% if hot %}
+
+<section class="page-add" style="margin-bottom:0px">
+        <div class="container">
+            <h3 style="font-family: titr1;text-align: center"><svg style="color: red" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-thermometer-high" viewBox="0 0 16 16">
+  <path d="M9.5 12.5a1.5 1.5 0 1 1-2-1.415V2.5a.5.5 0 0 1 1 0v8.585a1.5 1.5 0 0 1 1 1.415z"/>
+  <path d="M5.5 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0V2.5zM8 1a1.5 1.5 0 0 0-1.5 1.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0l-.166-.15V2.5A1.5 1.5 0 0 0 8 1z"/>
+</svg>
+            کالاهای داغ
+            </h3>
+
+                <hr>
+        </div>
+    </section>
+
+
+<div class="logo-section spad" style="padding-top: 0px;">
+        <div class="logo-items owl-carousel">
+
+ {% for x in hot %}
+                   
+                        
+                        <div class="card">
+                            
+                            <a class="img-card" href="{% url 'product-details' shop.slug x.pk %}">
+                                            <div id="yourContainer">
+                            <img src="{{ x.photo.url }}" style="border-radius:15px;width:100%;height:100%" />
+                            </div>
+                                <div class="top-left" style="background-color:red;border-radius:15px;padding:1%;color:white">{{ x.off }}%</div>
+                                     <div class="top-right" style="background-color:white;border-radius:15px;padding:1%;color:white">
+                                          {% for z in x.stars %}
+                                  <svg xmlns="http://www.w3.org/2000/svg" color="#F0A500" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+</svg>
+                            {% endfor %}
+
+
+                         {% for z in x.stars_left %}
+            <svg xmlns="http://www.w3.org/2000/svg" color="#F0A500" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+  <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+</svg>
+
+                            {% endfor %}
+
+
+   {% if x.verified %}
+                                            <svg style="color: cornflowerblue" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                                          <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+                                        </svg>
+{% endif %}
+
+                                     </div>
+                          </a>
+                                <div class="product-text" style="text-align:center">
+                            <h6 style="font-family: vazir;text-align:center;">{{ x.name }}</h6>
+
+                            <p style="color: green;font-family: vazir;text-align:center;font-size:18px;font-weight: 700;margin-bottom:0px">{{ x.last_comma }}|تومان</p>
+                            <del style="color: grey;font-family: vazir;text-align:center">{{ x.price_comma }}|تومان</del>
+                        </div>
+                         
+                        </div>
+             
+ {% endfor %}
+                
+        </div>
+    </div>
+
+
+{% endif %}
+
+
+<br>
+<br>
+      
+      
+
+    <!-- Lookbok Section End -->
+
+
+
+
+
+    <div class="contact-section" style="background-image:  url({% static 'img/part.jpg' %});">
+        <div class="container">
+                            <section class="page-add">
+        <div class="container">
+            <h3 style="font-family: titr1;text-align: center;color:white">
+            درباره ی ما
+            </h3>
+
+                <hr>
+        </div>
+    </section>
+    
+            <div class="row">
+
+
+                <div class="col-lg-3 offset-lg-1">
+                    <div class="contact-widget">
+                        {% if shop.address_bool %}
+                                 <div class="cw-item" style="text-align: center;font-family: vazir" >
+                            <h5 style="font-family: farhang;text-align: center;;color:white">آدرس ما</h5>
+                            <ul>
+                              
+                                <li style="color:wheat">  {{shop.address }}</li>
+
+                            </ul>
+                        </div>
+                        {% endif %}
+                           {% if shop.phone_bool %}
+                                <div class="cw-item" style="text-align: center">
+                            <h5 style="font-family: farhang;text-align: center;color:white">تلفن</h5>
+                            <ul>
+                          <li style="color:wheat">  {{shop.phone }}</li>
+
+                            </ul>
+                        </div>
+                     {% endif %}
+                    </div>
+                </div>
+                     <div class="col-lg-8">
+                    <p style="font-family: vazir;text-align: right;color:white;font-size:18px">
+                       {{ shop.about }}
+                    </p>
+                </div>
+            </div>
+         
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- Logo Section Begin -->
+    <!--<div class="logo-section spad">-->
+    <!--    <div class="logo-items-end owl-carousel">-->
+    <!--        {% if shop.image_product1 %}-->
+    <!--               <img src="{{ shop.image_product1.url }}" alt="" style="width:250px;height:200px;border-radius: 15px" >-->
+    <!--        {% endif %}-->
+
+    <!--           {% if shop.image_product1 %}-->
+    <!--               <img src="{{ shop.image_product2.url }}" alt="" style="width:250px;height:200px;border-radius: 15px">-->
+    <!--        {% endif %}-->
+
+    <!--           {% if shop.image_product1 %}-->
+    <!--                <img src="{{ shop.image_product3.url }}" alt="" style="width:250px;height:200px;border-radius: 15px">-->
+    <!--        {% endif %}-->
+    <!--           {% if shop.image_product1 %}-->
+    <!--                  <img src="{{ shop.image_product4.url }}" alt="" style="width:250px;height:200px;border-radius: 15px">-->
+    <!--        {% endif %}-->
+
+    <!--           {% if shop.image_product1 %}-->
+    <!--                     <img src="{{ shop.image_product5.url }}" alt="" style="width:250px;height:200px;border-radius: 15px">-->
+    <!--        {% endif %}-->
+
+    <!--    </div>-->
+    <!--</div>-->
+
+
+
+{% if comments %}
+<br>
+
+         <h3 style="font-family: titr1;text-align: center">
+                             <svg xmlns="http://www.w3.org/2000/svg" style="color:red" width="30" height="30" fill="currentColor" class="bi bi-chat-square" viewBox="0 0 16 16">
+  <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+</svg>
+                          نظرات
+             <span style="color: {{ shop.color_s.hash }} ">
+                           شما
+             </span>
+         </h3>
+
+
+<div class="container mt-6 mb-5">
+    <div class="d-flex justify-content-center row">
+        <div class="d-flex flex-column col-md-12">
+
+            <div class="coment-bottom bg-white p-2 px-4">
+
+    {% for comment in comments %}
+                     <div class="commented-section mt-2">
+                    <div class="d-flex flex-row align-items-center commented-user">
+                        <h3 class="mr-2" style="font-family: vazir;font-size: 19px">{{ comment.feedbacker }}</h3>
+                    <h4>|</h4>
+                       <span style="font-size: 16px;font-family: vazir;color:black" class="mb-1 ml-2">{{ comment.jpublish }}</span>
+                          <h4>|</h4>
+                             {% for i in comment.stars %}
+
+                            <i class="fa fa-star"  style="color:#F0A500;font-size: 20px"></i>
+
+                         {% endfor %}
+
+                          {% for i in comment.stars_left %}
+                                <i class="fa fa-star-o" style="color:#F0A500;font-size: 20px"></i>
+
+                         {% endfor %}
+                    </div>
+                    <div class="comment-text-sm" style="text-align: right;font-family: vazir;font-size: 16px;color:black">
+                        {{ comment.content }}
+                    </div>
+
+
+                </div>
+                    <hr>
+            {% endfor %}
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+        {% else %}
+        <p style="font-family: vazir;text-align:center">
+            <!--فعلا کامنتی نداریم :(-->
+        </p>
+        {% endif %}
+
+
+{% if add_comment %}
+
+<div class="container contact-form">
+            <div class="contact-image" style="text-align: center">
+                <img style="width:100px;height:100px" src="../../static/images/rocket.png" alt="rocket_contact"/>
+            </div>
+            <form method="post" style="direction:rtl">
+                {% csrf_token %}
+                <h3 style="font-family: farhang;text-align: center">ثبت نظر</h3>
+                    <div class="form-floating mb-3"style="text-align: right">
+                            {{ form.grade }}
+                        </div>
+
+             <div class="form-floating mb-3"style="text-align: right;font-family: vazir">
+                                {{ form.content }}
+
+                </div>
+                  <div class="form-group">
+                            <input type="submit" name="btnSubmit" class="btnContact btn-outline-success" style="font-family:farhang" value="ارسال" />
+                  </div>
+
+            </form>
+</div>
+{% endif %}
+    <!-- Logo Section End -->
+<style>
+
+#yourContainer {
+    /*width: 500px;*/
+    height: 250px;
+}
+
+#yourContainer img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+/* The hero image */
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("{{ shop.image_head1.url }}");
+
+  /* Set a specific height */
+  height: 50%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.carousel-caption {
+    background-color: rgb(0 0 0 / 46%);
+    text-align: left;
+    padding: 25px;
+    border-radius: 10px;
+}
+ol.carousel-indicators {
+    display: block;
+    left: auto;
+    bottom: 50px;
+    right: 15px;
+}
+.carousel-indicators li {
+    height: 5px;
+    background-color: #ffeb3b;
+    opacity: .6;
+}
+
+
+.card {
+    border-radius: 20px;
+    overflow: hidden;
+    border: none;
+    background-color: #fff
+}
+
+.image-card {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+
+.image-card-1 {
+    background-color: #18A4F7
+}
+
+.image-card-2 {
+    background-color: #00D7D2
+}
+
+.image-card-3 {
+    background-color: #FF75A0
+}
+
+.image-card img {
+    height: 150px;
+    width: 150px;
+    object-fit: cover
+}
+
+.card-text {
+    font-size: 13px
+}
+
+.card-body a {
+    font-size: 12px
+}
+
+.about span {
+    font-size: 12px
+}
+
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+input,
+textarea {
+    padding: 10px 12px 10px 12px;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background-color: #ECEFF1
+}
+
+input:focus,
+textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #304FFE;
+    outline-width: 0
+}
+
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
+</style>
+{% endblock %}

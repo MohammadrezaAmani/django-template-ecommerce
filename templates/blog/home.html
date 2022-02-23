@@ -1,0 +1,2135 @@
+{% extends "base/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    {% load static %}
+
+<section id="hero" class="d-flex align-items-center" style="margin-top: -100px">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1">
+          <h1 style="font-family:farhang">شاپتون</h1>
+          <h2 ><span style="color: white;margin-right: 10px;font-family:farhang">فروشگاه اختصاصی خودت رو داشته باش</span></h2>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            <a style="font-family:farhang" href="{% url 'register' %}" class="btn-get-started scrollto font_farhang">همین حالا شروع کن</a>
+            <a href="{% url 'about' %}" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span style="font-family:farhang" >آشنایی با ما</span></a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img">
+       <svg class="animated" id="freepik_stories-opened" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"><style>svg#freepik_stories-opened:not(.animated) .animable {opacity: 0;}svg#freepik_stories-opened.animated #freepik--background-simple--inject-192 {animation: 1.5s Infinite  linear shake;animation-delay: 0s;}svg#freepik_stories-opened.animated #freepik--Store--inject-192 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) slideUp;animation-delay: 0s;}svg#freepik_stories-opened.animated #freepik--Ground--inject-192 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) zoomIn;animation-delay: 0s;}svg#freepik_stories-opened.animated #freepik--Plants--inject-192 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) zoomOut,1.5s Infinite  linear wind;animation-delay: 0s,1s;}            @keyframes shake {                10%, 90% {                    transform: translate3d(-1px, 0, 0);                  }                  20%, 80% {                    transform: translate3d(2px, 0, 0);                  }                  30%, 50%, 70% {                    transform: translate3d(-4px, 0, 0);                  }                  40%, 60% {                    transform: translate3d(4px, 0, 0);                  }            }                    @keyframes slideUp {                0% {                    opacity: 0;                    transform: translateY(30px);                }                100% {                    opacity: 1;                    transform: inherit;                }            }                    @keyframes zoomIn {                0% {                    opacity: 0;                    transform: scale(0.5);                }                100% {                    opacity: 1;                    transform: scale(1);                }            }                    @keyframes zoomOut {                0% {                    opacity: 0;                    transform: scale(1.5);                }                100% {                    opacity: 1;                    transform: scale(1);                }            }                    @keyframes wind {                0% {                    transform: rotate( 0deg );                }                25% {                    transform: rotate( 1deg );                }                75% {                    transform: rotate( -1deg );                }            }        </style><g id="freepik--background-simple--inject-192" style="transform-origin: 245.014px 246.223px 0px;" class="animable"><path d="M426.53,388.05s29.63-69.62,16.29-158.5c-4.55-30.39-13.94-63.25-36.28-86.07-31-31.7-83.42-47.34-126.28-34.7-38.17,11.24-64.76,41.26-96.68,63-34.81,23.7-68.14,5.93-108.88,40.74s-32.59,97-23.7,119.25,21,44.82,56.45,54.63Z" style="fill: rgb(82, 127, 227); transform-origin: 245.014px 246.223px 0px;" id="el6k3byn7dr48" class="animable"></path><g id="elrtqc8y3of"><path d="M426.53,388.05s29.63-69.62,16.29-158.5c-4.55-30.39-13.94-63.25-36.28-86.07-31-31.7-83.42-47.34-126.28-34.7-38.17,11.24-64.76,41.26-96.68,63-34.81,23.7-68.14,5.93-108.88,40.74s-32.59,97-23.7,119.25,21,44.82,56.45,54.63Z" style="fill: rgb(255, 255, 255); opacity: 0.7; transform-origin: 245.014px 246.223px 0px;" class="animable"></path></g></g><g id="freepik--Store--inject-192" style="transform-origin: 254.153px 262.545px 0px;" class="animable"><rect x="107.45" y="188.34" width="292.5" height="198.05" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 253.7px 287.365px 0px;" id="elqi5z7j1jzrm" class="animable"></rect><rect x="298.12" y="194.07" width="98.76" height="162.29" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 347.5px 275.215px 0px;" id="el0k85uwarryyg" class="animable"></rect><rect x="110.62" y="194.07" width="98.76" height="162.29" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 160px 275.215px 0px;" id="elw8y7sm3qyfm" class="animable"></rect><polygon points="396.88 246.5 298.12 281 298.12 194.06 396.88 194.06 396.88 246.5" style="fill: rgb(38, 50, 56); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 347.5px 237.53px 0px;" id="elawxmce2frb" class="animable"></polygon><polygon points="209.38 246.5 110.62 287.5 110.62 194.06 209.38 194.06 209.38 246.5" style="fill: rgb(38, 50, 56); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 160px 240.78px 0px;" id="elert3rpd673" class="animable"></polygon><rect x="213.33" y="188.34" width="80.74" height="198.05" style="fill: rgb(82, 127, 227); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 253.7px 287.365px 0px;" id="el4hm3i529e9e" class="animable"></rect><path d="M217.9,296.5h71.6v82.41H217.9Zm0-100.69v82.41h71.6V195.81Z" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 253.7px 287.36px 0px;" id="elwwytwxnpo5n" class="animable"></path><polygon points="289.5 369.51 289.5 359.36 239.2 378.91 264.91 378.91 289.5 369.51" style="fill: rgb(38, 50, 56); transform-origin: 264.35px 369.135px 0px;" id="el7d1m0uy11p5" class="animable"></polygon><polygon points="217.9 254.28 289.5 223.03 289.5 195.81 217.9 195.81 217.9 254.28" style="fill: rgb(38, 50, 56); transform-origin: 253.7px 225.045px 0px;" id="elcusxouhwwek" class="animable"></polygon><polygon points="260.72 278.22 289.5 267.22 289.5 258.12 237.78 278.22 260.72 278.22" style="fill: rgb(38, 50, 56); transform-origin: 263.64px 268.17px 0px;" id="el5n6y1b5nm2i" class="animable"></polygon><polygon points="217.9 366.77 289.5 337.4 289.5 296.5 217.9 296.5 217.9 366.77" style="fill: rgb(38, 50, 56); transform-origin: 253.7px 331.635px 0px;" id="eli5zmpqbzqe" class="animable"></polygon><polygon points="405 192.11 103.37 192.11 133.53 138.7 374.84 138.7 405 192.11" style="fill: rgb(82, 127, 227); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 254.185px 165.405px 0px;" id="el80frllswk45" class="animable"></polygon><path d="M103.37,192.25c0,.37-.06.74-.06,1.11a16.72,16.72,0,1,0,33.43,0c0-.37,0-.74-.05-1.11Z" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 120.025px 201.369px 0px;" id="elk0otqaswldm" class="animable"></path><path d="M136.87,192.25c0,.37-.06.74-.06,1.11a16.72,16.72,0,1,0,33.43,0c0-.37,0-.74-.05-1.11Z" style="fill: rgb(82, 127, 227); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 153.525px 201.369px 0px;" id="elhjea0pnmiaf" class="animable"></path><path d="M170.37,192.25c0,.37-.06.74-.06,1.11a16.72,16.72,0,1,0,33.43,0c0-.37,0-.74-.05-1.11Z" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 187.025px 201.369px 0px;" id="elkr1enwgj5wc" class="animable"></path><path d="M203.87,192.25c0,.37-.06.74-.06,1.11a16.72,16.72,0,1,0,33.43,0c0-.37,0-.74-.05-1.11Z" style="fill: rgb(82, 127, 227); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 220.525px 201.369px 0px;" id="eljmj0bscm0nl" class="animable"></path><path d="M237.37,192.25c0,.37-.06.74-.06,1.11a16.72,16.72,0,1,0,33.43,0c0-.37,0-.74-.05-1.11Z" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 254.025px 201.369px 0px;" id="elgaxafxr4jrf" class="animable"></path><path d="M270.87,192.25c0,.37-.06.74-.06,1.11a16.72,16.72,0,1,0,33.43,0c0-.37,0-.74-.05-1.11Z" style="fill: rgb(82, 127, 227); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 287.525px 201.369px 0px;" id="el0zoiobd9ri" class="animable"></path><path d="M304.37,192.25c0,.37-.06.74-.06,1.11a16.72,16.72,0,1,0,33.43,0c0-.37,0-.74-.05-1.11Z" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 321.025px 201.369px 0px;" id="elwpvc68o8npd" class="animable"></path><path d="M337.87,192.25c0,.37-.06.74-.06,1.11a16.72,16.72,0,1,0,33.43,0c0-.37,0-.74-.05-1.11Z" style="fill: rgb(82, 127, 227); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 354.525px 201.369px 0px;" id="eljxdx0lqh04l" class="animable"></path><path d="M371.37,192.25c0,.37-.06.74-.06,1.11a16.72,16.72,0,1,0,33.43,0c0-.37,0-.74-.05-1.11Z" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 388.025px 201.369px 0px;" id="eledumqv324qv" class="animable"></path><polyline points="229.63 232.78 253.78 219.78 277.77 232.78" style="fill: none; stroke: rgb(255, 255, 255); stroke-linecap: round; stroke-linejoin: round; transform-origin: 253.7px 226.28px 0px;" id="elw4cxl2l71wm" class="animable"></polyline><path d="M256.14,219.78a2.36,2.36,0,1,0-2.36,2.36A2.36,2.36,0,0,0,256.14,219.78Z" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 253.78px 219.78px 0px;" id="eljzus8y58ktf" class="animable"></path><rect x="229.63" y="232.78" width="48.14" height="23.82" style="fill: rgb(82, 127, 227); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 253.7px 244.69px 0px;" id="elzpfcgdoxl" class="animable"></rect><text transform="translate(232.11 248.1)" style="font-size:10.227350234985352px;fill:#263238;font-family:ChunkFive-Roman, ChunkFive">OPENED</text><circle cx="286.58" cy="288.48" r="4.9" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 286.58px 288.48px 0px;" id="elcrt8hkrjuak" class="animable"></circle><circle cx="286.58" cy="288.48" r="1.25" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 286.58px 288.48px 0px;" id="elx5s8b41zzwr" class="animable"></circle></g><g id="freepik--Ground--inject-192" style="transform-origin: 253.665px 388.335px 0px;" class="animable animator-active"><path d="M435,391.67H72.36A3.34,3.34,0,0,1,69,388.33h0A3.33,3.33,0,0,1,72.36,385H435a3.33,3.33,0,0,1,3.33,3.33h0A3.34,3.34,0,0,1,435,391.67Z" style="fill: rgb(38, 50, 56); transform-origin: 253.665px 388.335px 0px;" id="elap4ghjucz6q" class="animable"></path></g><g id="freepik--Plants--inject-192" style="transform-origin: 255.71px 307.398px 0px;" class="animable"><path d="M127.42,232.57v6.74h-2.11v-7.39a3.16,3.16,0,0,0-3.16-3.17h0a3.17,3.17,0,0,0-3.17,3.17v9.18h-2v-4.87a2.28,2.28,0,0,0-2.27-2.28h0a2.28,2.28,0,0,0-2.28,2.28v7.47h0a1.47,1.47,0,0,0,1.47,1.46h5v5.52h6.33v-7.15h4.39a1.78,1.78,0,0,0,1.78-1.78h0v-9.18a2,2,0,0,0-2-2h0A2,2,0,0,0,127.42,232.57Z" style="fill: rgb(82, 127, 227); transform-origin: 121.915px 239.715px 0px;" id="elv75i7xjgzd" class="animable"></path><rect x="116.65" y="250.24" width="11.13" height="10.32" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 122.215px 255.4px 0px;" id="el9pdqilmjp3" class="animable"></rect><rect x="115.98" y="247.79" width="12.45" height="3.32" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 122.205px 249.45px 0px;" id="elj46lftpk6qi" class="animable"></rect><polygon points="124.28 288.57 120.22 282.08 122.93 282.35 122.66 278.56 125.64 282.35 125.91 270.71 128.07 278.29 130.78 268.54 131.59 279.91 137.01 274.23 133.22 283.16 137.01 281.81 129.7 289.93 124.28 288.57" style="fill: rgb(82, 127, 227); transform-origin: 128.615px 279.235px 0px;" id="el43jkx4jmzln" class="animable"></polygon><rect x="122.21" y="289.45" width="11.13" height="10.32" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 127.775px 294.61px 0px;" id="el2jeymx0ewcp" class="animable"></rect><rect x="121.55" y="287.01" width="12.45" height="3.32" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 127.775px 288.67px 0px;" id="el5tm29o7nr78" class="animable"></rect><polygon points="181.94 288.57 177.88 282.08 180.58 282.35 180.31 278.56 183.29 282.35 183.56 270.71 185.72 278.29 188.43 268.54 189.24 279.91 194.66 274.23 190.87 283.16 194.66 281.81 187.35 289.93 181.94 288.57" style="fill: rgb(82, 127, 227); transform-origin: 186.27px 279.235px 0px;" id="elw2goaff8db" class="animable"></polygon><rect x="179.86" y="289.45" width="11.13" height="10.32" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 185.425px 294.61px 0px;" id="elc0i6do3736" class="animable"></rect><rect x="179.2" y="287.01" width="12.45" height="3.32" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 185.425px 288.67px 0px;" id="elt3lmg0puioc" class="animable"></rect><path d="M153.79,287.22a35.93,35.93,0,0,1-5.69-.54c-3-.54-3.52-2.44-2.16-3s5.95.27,5.95.27-5.95,0-6.76-3.52,2.16-3.25,3-2.43,3,2.43,3,2.43-4.6-4.6-4.6-7.31,3-2.43,3.79-.81,2.71,6.5,2.71,6.5-3-8.66.81-7.31,3,5.41,3,6.23v3.51s3.79-7.3,5.15-5.68-1.9,4.6-1.9,4.6,1.9-7,6.5-6.77.27,3.52-.54,4.88-4.33,4.33-4.33,4.33,7.85-3.52,11.63-3.52.28,4.33-1.89,4.6-6.23.81-6.23.81,5.42,2.44,3.25,3-7.58-.54-7.58-.54Z" style="fill: rgb(82, 127, 227); transform-origin: 160.008px 279.367px 0px;" id="el3f80gxcd613" class="animable"></path><rect x="151.44" y="289.45" width="11.13" height="10.32" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 157.005px 294.61px 0px;" id="elq2ctw2xfqhh" class="animable"></rect><rect x="150.78" y="287.01" width="12.45" height="3.32" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 157.005px 288.67px 0px;" id="elcx097vh3zun" class="animable"></rect><path d="M170.54,237.27v5h1.56v-5.48a2.35,2.35,0,0,1,2.35-2.34h0a2.34,2.34,0,0,1,2.34,2.34v6.8h1.45V240a1.68,1.68,0,0,1,1.68-1.68h0a1.69,1.69,0,0,1,1.69,1.68v5.54h0a1.09,1.09,0,0,1-1.09,1.08h-3.73v4.09H172.1v-5.29h-3.25a1.33,1.33,0,0,1-1.32-1.33h0v-6.79a1.51,1.51,0,0,1,1.5-1.51h0A1.52,1.52,0,0,1,170.54,237.27Z" style="fill: rgb(82, 127, 227); transform-origin: 174.57px 242.58px 0px;" id="el1xgbcs730pv" class="animable"></path><rect x="168.37" y="250.24" width="11.13" height="10.32" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 173.935px 255.4px 0px;" id="elaj7f42td2b5" class="animable"></rect><rect x="167.7" y="247.79" width="12.45" height="3.32" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 173.925px 249.45px 0px;" id="el1905twc7mca" class="animable"></rect><path d="M127.57,315.81v5h1.56v-5.48a2.34,2.34,0,0,1,2.34-2.34h0a2.35,2.35,0,0,1,2.35,2.34v6.8h1.44v-3.61a1.69,1.69,0,0,1,1.69-1.68h0a1.68,1.68,0,0,1,1.68,1.68v5.53h0a1.08,1.08,0,0,1-1.08,1.09h-3.73v4.09h-4.69v-5.3h-3.25a1.32,1.32,0,0,1-1.32-1.32h0v-6.8a1.5,1.5,0,0,1,1.5-1.5h0A1.51,1.51,0,0,1,127.57,315.81Z" style="fill: rgb(82, 127, 227); transform-origin: 131.595px 321.11px 0px;" id="elpj2645y0x4s" class="animable"></path><rect x="125.39" y="328.78" width="11.13" height="10.32" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 130.955px 333.94px 0px;" id="el5khnrbydxtx" class="animable"></rect><rect x="124.73" y="326.34" width="12.45" height="3.32" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 130.955px 328px 0px;" id="elxw683na5n9i" class="animable"></rect><path d="M182.76,315.81v5h1.57v-5.48a2.34,2.34,0,0,1,2.34-2.34h0a2.35,2.35,0,0,1,2.35,2.34v6.8h1.44v-3.61a1.69,1.69,0,0,1,1.69-1.68h0a1.68,1.68,0,0,1,1.68,1.68v5.53h0a1.08,1.08,0,0,1-1.08,1.09H189v4.09h-4.69v-5.3h-3.25a1.32,1.32,0,0,1-1.32-1.32h0v-6.8a1.5,1.5,0,0,1,1.5-1.5h0A1.5,1.5,0,0,1,182.76,315.81Z" style="fill: rgb(82, 127, 227); transform-origin: 186.785px 321.11px 0px;" id="el9pbf420xdk" class="animable"></path><rect x="180.59" y="328.78" width="11.13" height="10.32" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 186.155px 333.94px 0px;" id="elb0ozyq0ka9n" class="animable"></rect><rect x="179.93" y="326.34" width="12.45" height="3.32" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 186.155px 328px 0px;" id="elhzzraguuj0s" class="animable"></rect><path d="M154.46,328.57a19.5,19.5,0,0,0-3.88-4.58c-2.46-2.12-3.17-7.05-3.17-7.05s1.06-.35,3.17,1.76a22,22,0,0,1,3.52,4.93,59.8,59.8,0,0,1-1.41-8.1c0-2.11,3.53-7.39,3.53-7.39a32.21,32.21,0,0,1,1.05,5.63v8.1a25.82,25.82,0,0,1,4.94-6.69,19.51,19.51,0,0,1,7-3.52s.35,4.23-1.06,5.63-7.39,6.34-7.39,6.34l8.1-1.4-8.1,4.93s-1.52,2-2.82,1.41A6.81,6.81,0,0,0,154.46,328.57Z" style="fill: rgb(82, 127, 227); transform-origin: 158.329px 318.409px 0px;" id="elofz05wgxo3m" class="animable"></path><rect x="151.11" y="328.78" width="11.13" height="10.32" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 156.675px 333.94px 0px;" id="elo50enve8l5" class="animable"></rect><rect x="150.45" y="326.34" width="12.45" height="3.32" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 156.675px 328px 0px;" id="elf2evjxud0mb" class="animable"></rect><path d="M189.24,248s-3.51-3-4.6-4.06-3.79-4.06-1.62-3a34.45,34.45,0,0,1,4.6,3s-1.89-5.68-1.89-7.31,2.7-.54,4.06,2.17,2.16,4.6,2.16,4.6-2.44-10.83-.27-11.37,2.71,7,2.71,7,1.89-13.26,4.6-10.29-1.9,10.83-1.9,10.83,5.42-3.79,4.33-.81a7.36,7.36,0,0,1-4.06,4.06s7.85-1.9,5.69,1.08-9.2,5.42-9.2,5.42Z" style="fill: rgb(82, 127, 227); transform-origin: 192.813px 238.813px 0px;" id="elloydc3bi6n" class="animable"></path><rect x="187.56" y="250.24" width="11.13" height="10.32" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 193.125px 255.4px 0px;" id="elnii5ptmtzq" class="animable"></rect><rect x="186.9" y="247.79" width="12.45" height="3.32" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 193.125px 249.45px 0px;" id="el2molb6pqkkq" class="animable"></rect><path d="M145.94,248s-3.52-3-4.6-4.06-3.79-4.06-1.63-3a33.72,33.72,0,0,1,4.6,3s-1.89-5.68-1.89-7.31,2.71-.54,4.06,2.17,2.16,4.6,2.16,4.6-2.43-10.83-.27-11.37,2.71,7,2.71,7,1.9-13.26,4.6-10.29-1.89,10.83-1.89,10.83,5.41-3.79,4.33-.81a7.39,7.39,0,0,1-4.06,4.06s7.85-1.9,5.68,1.08-9.2,5.42-9.2,5.42Z" style="fill: rgb(82, 127, 227); transform-origin: 149.508px 238.813px 0px;" id="elitdotyjgtl" class="animable"></path><rect x="144.25" y="250.24" width="11.13" height="10.32" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 149.815px 255.4px 0px;" id="elvoledobdybp" class="animable"></rect><rect x="143.59" y="247.79" width="12.45" height="3.32" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 149.815px 249.45px 0px;" id="elx987369p62j" class="animable"></rect><rect x="111" y="260" width="99" height="5" style="fill: rgb(82, 127, 227); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 160.5px 262.5px 0px;" id="elr2bh84yyfh7" class="animable"></rect><rect x="111" y="299.42" width="99" height="5" style="fill: rgb(82, 127, 227); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 160.5px 301.92px 0px;" id="elhz1wqpze97m" class="animable"></rect><rect x="111" y="338.84" width="99" height="5" style="fill: rgb(82, 127, 227); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 160.5px 341.34px 0px;" id="elk8ta3rmdpzs" class="animable"></rect><rect x="111" y="260" width="3.5" height="126.49" style="fill: rgb(82, 127, 227); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 112.75px 323.245px 0px;" id="elf004klmvrjt" class="animable"></rect><rect x="206.5" y="260" width="3.5" height="126.49" style="fill: rgb(82, 127, 227); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 208.25px 323.245px 0px;" id="el8qag363f3gu" class="animable"></rect><path d="M352.27,358.33A32.62,32.62,0,0,1,347.64,347a135.7,135.7,0,0,1-2.18-14.74c-.55-4.91-1.64-12.9-1.64-12.9s5.45,7.37,6.27,10.75,2.18,7.06,2.73,11.36,1.36,7.06,1.63,8.91.28,6.44.28,6.44.27-13.81-.55-20.26-1.63-11.67-1.36-16.58.27-5.83.54-8.9.55-8.91.55-8.91,3.27,10.13,4.63,16.58.82,8.6,1.37,14.12.82,6.76.27,9.52-.27,3.07-1.09,6.76a19.62,19.62,0,0,1-1.36,4.6s3.81-9.82,4.9-15a61.48,61.48,0,0,1,3.82-12,34,34,0,0,1,2.73-5.22l4.36-7.36s.27,11.05-1.09,15-1.91,7.06-3.55,10.75a23,23,0,0,0-2.18,8c-.27,2.46-.27,4.6-1.36,6.14s-1.36,3.68-2.18,4.6a13.72,13.72,0,0,1-2.18,1.85s6.54-10.13,8.18-12.59,1.63-3.07,4.09-4.61,3.81-2.45,3.81-2.45-4.9,11.05-6.27,13.2-2.18,4.91-4.09,6.45a27.65,27.65,0,0,0-3,2.76H347.64s-3.27-4.3-3.82-8.29-.82-8-.82-8a51,51,0,0,1,4.37,4C348.73,352.49,352.27,358.33,352.27,358.33Z" style="fill: rgb(82, 127, 227); transform-origin: 360.04px 332.72px 0px;" id="el5pa9ranenmt" class="animable"></path><rect x="343.86" y="363.02" width="27.77" height="23.36" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 357.745px 374.7px 0px;" id="elfyuuc5j4cr7" class="animable"></rect><rect x="342.21" y="359.94" width="31.08" height="5.07" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 357.75px 362.475px 0px;" id="elqboiq7jc5g" class="animable"></rect><path d="M384.25,284a12.45,12.45,0,0,0,7.27-5.82A13.1,13.1,0,0,0,393,269.3s-6.72,2.86-8.44,6.77a12.45,12.45,0,0,0-1,5C381,276.21,370.33,273,370.33,273s1.53,8.6,4.91,11.36c2.52,2.06,5.71,4.29,7.18,5.29v7.61a13.44,13.44,0,0,0-5.95-4.91c-4-1.54-10.75,1.22-10.75,1.22a13,13,0,0,0,7.37,5.22,12.42,12.42,0,0,0,9.33-1.11v11.87a13.37,13.37,0,0,0-5.95-4.92c-4-1.54-10.75,1.23-10.75,1.23a13.09,13.09,0,0,0,7.37,5.22,12.46,12.46,0,0,0,9.33-1.12v8.8a13.37,13.37,0,0,0-5.95-4.92c-4-1.54-10.75,1.23-10.75,1.23a13.09,13.09,0,0,0,7.37,5.22,12.46,12.46,0,0,0,9.33-1.12v13.4a13.5,13.5,0,0,0-5.95-4.92c-4-1.53-10.75,1.23-10.75,1.23a13,13,0,0,0,7.37,5.22,12.47,12.47,0,0,0,9.33-1.11v11.86a13.44,13.44,0,0,0-5.95-4.91c-4-1.54-10.75,1.22-10.75,1.22a13,13,0,0,0,7.37,5.22,12.42,12.42,0,0,0,9.33-1.11v19.84a.5.5,0,0,0,.5.5.5.5,0,0,0,.5-.5V289.9C383.77,289.31,384.47,287.67,384.25,284Z" style="fill: rgb(82, 127, 227); transform-origin: 379.472px 317.455px 0px;" id="eljx3syh1hkd" class="animable"></path><path d="M389.67,292.32a13.46,13.46,0,0,0-6.14,5.22,12.44,12.44,0,0,0,9.52,1.22,13,13,0,0,0,7.37-5.22S393.66,290.78,389.67,292.32Z" style="fill: rgb(82, 127, 227); transform-origin: 391.975px 295.529px 0px;" id="el6nnrsf3p6zu" class="animable"></path><path d="M389.67,304.29a13.53,13.53,0,0,0-6.14,5.22,12.47,12.47,0,0,0,9.52,1.23,13.09,13.09,0,0,0,7.37-5.22S393.66,302.76,389.67,304.29Z" style="fill: rgb(82, 127, 227); transform-origin: 391.975px 307.504px 0px;" id="ela08p84mwe5b" class="animable"></path><path d="M389.67,313.5a13.53,13.53,0,0,0-6.14,5.22,12.47,12.47,0,0,0,9.52,1.23,13.09,13.09,0,0,0,7.37-5.22S393.66,312,389.67,313.5Z" style="fill: rgb(82, 127, 227); transform-origin: 391.975px 316.72px 0px;" id="elfh9qt14vxak" class="animable"></path><path d="M389.67,327.62a13.53,13.53,0,0,0-6.14,5.22,12.42,12.42,0,0,0,9.52,1.23,13,13,0,0,0,7.37-5.22S393.66,326.09,389.67,327.62Z" style="fill: rgb(82, 127, 227); transform-origin: 391.975px 330.836px 0px;" id="elwg977msg4lc" class="animable"></path><path d="M389.67,339.91a13.46,13.46,0,0,0-6.14,5.22,12.44,12.44,0,0,0,9.52,1.22,13,13,0,0,0,7.37-5.22S393.66,338.37,389.67,339.91Z" style="fill: rgb(82, 127, 227); transform-origin: 391.975px 343.119px 0px;" id="ell0i5yzvjk79" class="animable"></path><g id="elv7e5vunksnl"><g style="opacity: 0.5; transform-origin: 383.07px 317.455px 0px;" class="animable"><path d="M384.25,284a12.45,12.45,0,0,0,7.27-5.82A13.1,13.1,0,0,0,393,269.3s-6.72,2.86-8.44,6.77a12.45,12.45,0,0,0-1,5C381,276.21,370.33,273,370.33,273s1.53,8.6,4.91,11.36c2.52,2.06,5.71,4.29,7.18,5.29v7.61a13.44,13.44,0,0,0-5.95-4.91c-4-1.54-10.75,1.22-10.75,1.22a13,13,0,0,0,7.37,5.22,12.42,12.42,0,0,0,9.33-1.11v11.87a13.37,13.37,0,0,0-5.95-4.92c-4-1.54-10.75,1.23-10.75,1.23a13.09,13.09,0,0,0,7.37,5.22,12.46,12.46,0,0,0,9.33-1.12v8.8a13.37,13.37,0,0,0-5.95-4.92c-4-1.54-10.75,1.23-10.75,1.23a13.09,13.09,0,0,0,7.37,5.22,12.46,12.46,0,0,0,9.33-1.12v13.4a13.5,13.5,0,0,0-5.95-4.92c-4-1.53-10.75,1.23-10.75,1.23a13,13,0,0,0,7.37,5.22,12.47,12.47,0,0,0,9.33-1.11v11.86a13.44,13.44,0,0,0-5.95-4.91c-4-1.54-10.75,1.22-10.75,1.22a13,13,0,0,0,7.37,5.22,12.42,12.42,0,0,0,9.33-1.11v19.84a.5.5,0,0,0,.5.5.5.5,0,0,0,.5-.5V289.9C383.77,289.31,384.47,287.67,384.25,284Z" id="el62ym0yu1fzg" style="transform-origin: 379.472px 317.455px 0px;" class="animable"></path><path d="M389.67,292.32a13.46,13.46,0,0,0-6.14,5.22,12.44,12.44,0,0,0,9.52,1.22,13,13,0,0,0,7.37-5.22S393.66,290.78,389.67,292.32Z" id="elhnv90nlgzr6" style="transform-origin: 391.975px 295.529px 0px;" class="animable"></path><path d="M389.67,304.29a13.53,13.53,0,0,0-6.14,5.22,12.47,12.47,0,0,0,9.52,1.23,13.09,13.09,0,0,0,7.37-5.22S393.66,302.76,389.67,304.29Z" id="elhuzb1u069yn" style="transform-origin: 391.975px 307.504px 0px;" class="animable"></path><path d="M389.67,313.5a13.53,13.53,0,0,0-6.14,5.22,12.47,12.47,0,0,0,9.52,1.23,13.09,13.09,0,0,0,7.37-5.22S393.66,312,389.67,313.5Z" id="el8ouyfnxw1aq" style="transform-origin: 391.975px 316.72px 0px;" class="animable"></path><path d="M389.67,327.62a13.53,13.53,0,0,0-6.14,5.22,12.42,12.42,0,0,0,9.52,1.23,13,13,0,0,0,7.37-5.22S393.66,326.09,389.67,327.62Z" id="elswxblbjskar" style="transform-origin: 391.975px 330.836px 0px;" class="animable"></path><path d="M389.67,339.91a13.46,13.46,0,0,0-6.14,5.22,12.44,12.44,0,0,0,9.52,1.22,13,13,0,0,0,7.37-5.22S393.66,338.37,389.67,339.91Z" id="elytzcjjkfbv9" style="transform-origin: 391.975px 343.119px 0px;" class="animable"></path></g></g><rect x="378.19" y="363.02" width="11.13" height="23.36" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 383.755px 374.7px 0px;" id="elchwugmgch0w" class="animable"></rect><rect x="377.53" y="359.94" width="12.45" height="5.07" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 383.755px 362.475px 0px;" id="el5f8vw2d9ypo" class="animable"></rect><rect x="301.76" y="363.02" width="27.77" height="23.36" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 315.645px 374.7px 0px;" id="eluf90c1cc0wk" class="animable"></rect><rect x="300.11" y="359.94" width="31.08" height="5.07" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 315.65px 362.475px 0px;" id="el4lzzk4901is" class="animable"></rect><path d="M306.47,319a8.77,8.77,0,0,0-4-4.91,68.91,68.91,0,0,0-10.14-4.61s-.3,1.84,2.46,5.22,8.6,7.68,8.6,7.68a49.46,49.46,0,0,1-6.14.3c-4,0-7.68,5.22-7.68,5.22s5.53.92,7.37.92,8.6-2.15,8.6-2.15-2.15,3.38-2.15,5.84a95.11,95.11,0,0,0,1.22,9.52s3.69-1.54,4.61-4.61a69.73,69.73,0,0,0,1.54-9.52,10.52,10.52,0,0,0,3.07,3.07c2.45,1.84,9.21,4.3,9.21,4.3a21.23,21.23,0,0,0-3.38-7.68,14.62,14.62,0,0,0-7.68-5.21,5.19,5.19,0,0,0,3.69-1.85c1.53-1.84,4-8.29,4-8.29a9.1,9.1,0,0,0-6.14.62C310.46,314.42,306.47,319,306.47,319Z" style="fill: rgb(82, 127, 227); transform-origin: 306.305px 325.755px 0px;" id="elnsdl1imhc4k" class="animable"></path><g id="el36zjkkllx89"><path d="M306.47,319a8.77,8.77,0,0,0-4-4.91,68.91,68.91,0,0,0-10.14-4.61s-.3,1.84,2.46,5.22,8.6,7.68,8.6,7.68a49.46,49.46,0,0,1-6.14.3c-4,0-7.68,5.22-7.68,5.22s5.53.92,7.37.92,8.6-2.15,8.6-2.15-2.15,3.38-2.15,5.84a95.11,95.11,0,0,0,1.22,9.52s3.69-1.54,4.61-4.61a69.73,69.73,0,0,0,1.54-9.52,10.52,10.52,0,0,0,3.07,3.07c2.45,1.84,9.21,4.3,9.21,4.3a21.23,21.23,0,0,0-3.38-7.68,14.62,14.62,0,0,0-7.68-5.21,5.19,5.19,0,0,0,3.69-1.85c1.53-1.84,4-8.29,4-8.29a9.1,9.1,0,0,0-6.14.62C310.46,314.42,306.47,319,306.47,319Z" style="opacity: 0.5; transform-origin: 306.305px 325.755px 0px;" class="animable"></path></g><path d="M321.05,343.26a5.38,5.38,0,0,0-2.43-3,41.24,41.24,0,0,0-6.16-2.8s-.19,1.12,1.49,3.17a36.24,36.24,0,0,0,5.23,4.67,28.91,28.91,0,0,1-3.73.19c-2.43,0-4.67,3.17-4.67,3.17s3.36.56,4.48.56a34.85,34.85,0,0,0,5.23-1.31,8.59,8.59,0,0,0-1.31,3.55,57,57,0,0,0,.75,5.78,5.26,5.26,0,0,0,2.8-2.8,43.4,43.4,0,0,0,.93-5.78,6.46,6.46,0,0,0,1.86,1.86,32.05,32.05,0,0,0,5.6,2.62,12.78,12.78,0,0,0-2.05-4.67,8.88,8.88,0,0,0-4.67-3.17,3.15,3.15,0,0,0,2.24-1.12,28,28,0,0,0,2.43-5,5.55,5.55,0,0,0-3.73.37A19.38,19.38,0,0,0,321.05,343.26Z" style="fill: rgb(82, 127, 227); transform-origin: 320.95px 347.35px 0px;" id="el6j19514t735" class="animable"></path><g id="elr6e5p6bzmfj"><path d="M321.05,343.26a5.38,5.38,0,0,0-2.43-3,41.24,41.24,0,0,0-6.16-2.8s-.19,1.12,1.49,3.17a36.24,36.24,0,0,0,5.23,4.67,28.91,28.91,0,0,1-3.73.19c-2.43,0-4.67,3.17-4.67,3.17s3.36.56,4.48.56a34.85,34.85,0,0,0,5.23-1.31,8.59,8.59,0,0,0-1.31,3.55,57,57,0,0,0,.75,5.78,5.26,5.26,0,0,0,2.8-2.8,43.4,43.4,0,0,0,.93-5.78,6.46,6.46,0,0,0,1.86,1.86,32.05,32.05,0,0,0,5.6,2.62,12.78,12.78,0,0,0-2.05-4.67,8.88,8.88,0,0,0-4.67-3.17,3.15,3.15,0,0,0,2.24-1.12,28,28,0,0,0,2.43-5,5.55,5.55,0,0,0-3.73.37A19.38,19.38,0,0,0,321.05,343.26Z" style="opacity: 0.5; transform-origin: 320.95px 347.35px 0px;" class="animable"></path></g><path d="M312.14,354.89a6.43,6.43,0,0,0-2.94-3.61,50.56,50.56,0,0,0-7.45-3.39s-.23,1.35,1.8,3.84a45.07,45.07,0,0,0,6.33,5.65,36.49,36.49,0,0,1-4.52.22c-2.94,0-5.65,3.84-5.65,3.84s4.07.68,5.42.68,6.33-1.58,6.33-1.58-1.58,2.49-1.58,4.29a69.66,69.66,0,0,0,.9,7s2.71-1.13,3.39-3.39a50.7,50.7,0,0,0,1.13-7,7.7,7.7,0,0,0,2.26,2.26c1.81,1.36,6.78,3.17,6.78,3.17a15.44,15.44,0,0,0-2.49-5.65,10.75,10.75,0,0,0-5.64-3.84,3.81,3.81,0,0,0,2.71-1.36c1.13-1.35,2.93-6.1,2.93-6.1a6.7,6.7,0,0,0-4.52.45C315.08,351.5,312.14,354.89,312.14,354.89Z" style="fill: rgb(82, 127, 227); transform-origin: 312.025px 359.86px 0px;" id="elm406pt9dyu" class="animable"></path><path d="M303.7,341.75a6.44,6.44,0,0,0-2.93-3.62,51,51,0,0,0-7.46-3.39s-.22,1.36,1.81,3.85a44.3,44.3,0,0,0,6.32,5.64,34.84,34.84,0,0,1-4.51.23c-2.94,0-5.65,3.84-5.65,3.84s4.06.68,5.42.68S303,347.4,303,347.4s-1.59,2.48-1.59,4.29a68.64,68.64,0,0,0,.91,7s2.71-1.13,3.39-3.39a52.29,52.29,0,0,0,1.13-7,7.85,7.85,0,0,0,2.26,2.26c1.8,1.36,6.77,3.16,6.77,3.16a15.52,15.52,0,0,0-2.48-5.65,10.83,10.83,0,0,0-5.65-3.84,3.82,3.82,0,0,0,2.71-1.35c1.13-1.36,2.94-6.1,2.94-6.1a6.7,6.7,0,0,0-4.52.45C306.64,338.36,303.7,341.75,303.7,341.75Z" style="fill: rgb(82, 127, 227); transform-origin: 303.575px 346.715px 0px;" id="el2i50s600lug" class="animable"></path><path d="M318.39,330.91a6.46,6.46,0,0,0-4.6.72,50.74,50.74,0,0,0-6.69,4.73s1.06.88,4.23.38a44.88,44.88,0,0,0,8.07-2.62,35,35,0,0,1-2.08,4c-1.48,2.54.47,6.82.47,6.82s2.63-3.17,3.32-4.34,1.82-6.26,1.82-6.26a10.54,10.54,0,0,0,2.91,3.53,68.77,68.77,0,0,0,6.5,2.74s.39-2.91-1.22-4.63a50.47,50.47,0,0,0-5.48-4.51,7.72,7.72,0,0,0,3.09-.81c2.09-.88,6.15-4.26,6.15-4.26a15.41,15.41,0,0,0-6.13-.7,10.81,10.81,0,0,0-6.16,2.94,3.82,3.82,0,0,0,.19-3C322.18,324,319,320,319,320a6.7,6.7,0,0,0-1.88,4.13C316.94,326.67,318.39,330.91,318.39,330.91Z" style="fill: rgb(82, 127, 227); transform-origin: 320.99px 332.47px 0px;" id="eltv1bhmn4fbq" class="animable"></path><rect x="321.57" y="370.42" width="37.52" height="15.97" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 340.33px 378.405px 0px;" id="eluy5zmfbu8np" class="animable"></rect><rect x="319.34" y="368.31" width="41.99" height="3.46" style="fill: rgb(255, 255, 255); stroke: rgb(38, 50, 56); stroke-linecap: round; stroke-linejoin: round; transform-origin: 340.335px 370.04px 0px;" id="elcnjd892xdr" class="animable"></rect><path d="M335.63,361.71s1.85-.93-1.22-3.08-4-2.14-4-2.14l3.07,5.22a25,25,0,0,0-6.14-1.23,10.55,10.55,0,0,0-4.3.92l6.29,3.3s-6.6-.54-7.83-.54a23,23,0,0,0-4.6,1.23l4.6.92-7.06,2.15,7.37.61v3.07l4.6-2.76a8.64,8.64,0,0,0,.93,1.84c.61.92,2.76,3.38,2.76,3.38l2.76-4.3s.92,2.77,1.84,2.77a17.4,17.4,0,0,1,3.07.61l.71-3.94,4.51,3.33V370.3l2.46,2.77,2.15-3.38.31,2.76,4-1.84,1.84,3.68.92-4.6,2.58.42.49-1.34,1.23.61a17.58,17.58,0,0,0,4.91,1.23,33.28,33.28,0,0,0-2.45-3.07,12.85,12.85,0,0,0-3.38-1.84l2.15-.92s-4.3-1.54-5.53-1.54a9.75,9.75,0,0,0-3.38,1.23,8.57,8.57,0,0,0,2.46-2.46,26,26,0,0,0,1.23-3.38s-4.61,0-5.22,1.54-1.84,4-1.84,4l-2.15-4.6a7.55,7.55,0,0,0-1.54,2.15,24.84,24.84,0,0,0-.61,2.45l-1.84-3.68a9.49,9.49,0,0,0-2.15-2.46,31.7,31.7,0,0,0-.31,3.38v2.15l-1.54-3.69v3.07Z" style="fill: rgb(82, 127, 227); transform-origin: 339.16px 365.545px 0px;" id="eln5iwqmyb8vd" class="animable"></path><g id="elp0y1mejt5e9"><path d="M335.63,361.71s1.85-.93-1.22-3.08-4-2.14-4-2.14l3.07,5.22a25,25,0,0,0-6.14-1.23,10.55,10.55,0,0,0-4.3.92l6.29,3.3s-6.6-.54-7.83-.54a23,23,0,0,0-4.6,1.23l4.6.92-7.06,2.15,7.37.61v3.07l4.6-2.76a8.64,8.64,0,0,0,.93,1.84c.61.92,2.76,3.38,2.76,3.38l2.76-4.3s.92,2.77,1.84,2.77a17.4,17.4,0,0,1,3.07.61l.71-3.94,4.51,3.33V370.3l2.46,2.77,2.15-3.38.31,2.76,4-1.84,1.84,3.68.92-4.6,2.58.42.49-1.34,1.23.61a17.58,17.58,0,0,0,4.91,1.23,33.28,33.28,0,0,0-2.45-3.07,12.85,12.85,0,0,0-3.38-1.84l2.15-.92s-4.3-1.54-5.53-1.54a9.75,9.75,0,0,0-3.38,1.23,8.57,8.57,0,0,0,2.46-2.46,26,26,0,0,0,1.23-3.38s-4.61,0-5.22,1.54-1.84,4-1.84,4l-2.15-4.6a7.55,7.55,0,0,0-1.54,2.15,24.84,24.84,0,0,0-.61,2.45l-1.84-3.68a9.49,9.49,0,0,0-2.15-2.46,31.7,31.7,0,0,0-.31,3.38v2.15l-1.54-3.69v3.07Z" style="opacity: 0.3; transform-origin: 339.16px 365.545px 0px;" class="animable"></path></g></g><defs>     <filter id="active" height="200%">         <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="2"></feMorphology>                <feFlood flood-color="#32DFEC" flood-opacity="1" result="PINK"></feFlood>        <feComposite in="PINK" in2="DILATED" operator="in" result="OUTLINE"></feComposite>        <feMerge>            <feMergeNode in="OUTLINE"></feMergeNode>            <feMergeNode in="SourceGraphic"></feMergeNode>        </feMerge>    </filter>    <filter id="hover" height="200%">        <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="2"></feMorphology>                <feFlood flood-color="#ff0000" flood-opacity="0.5" result="PINK"></feFlood>        <feComposite in="PINK" in2="DILATED" operator="in" result="OUTLINE"></feComposite>        <feMerge>            <feMergeNode in="OUTLINE"></feMergeNode>            <feMergeNode in="SourceGraphic"></feMergeNode>        </feMerge>            <feColorMatrix type="matrix" values="0   0   0   0   0                0   1   0   0   0                0   0   0   0   0                0   0   0   1   0 "></feColorMatrix>    </filter></defs></svg>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  
+ 
+    
+        <section class="page-add" style="margin:0px">
+        <div class="container">
+            <h3 style="font-family: titr1;text-align: center"><svg style="color:#F0A500" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
+  <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
+</svg> خدمات ما</h3>
+                <hr>
+        </div>
+    </section> 
+    
+ 
+ <div class="container-fluid mb-5">
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="box">
+                <div class="our-services settings">
+                    <div class="icon"> <img src="https://i.imgur.com/6NKPrhO.png"> </div>
+                    <h4 style="font-family:farhang">
+                        سایت شخصی سازی شده
+                    </h4>
+                    <p style="font-family:vazir">
+                        ساخت سایت شخصی
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box">
+                <div class="our-services speedup">
+                    <div class="icon"> <img src="https://i.imgur.com/KMbnpFF.png"> </div>
+                <h4 style="font-family:farhang">
+                        سریع</h4>
+                  <p style="font-family:vazir">
+                        در کم تر از 10 دقیقه سایتت رو بساز
+                        </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box">
+                <div class="our-services privacy">
+                    <div class="icon"> <img src="https://i.imgur.com/AgyneKA.png"> </div>
+                  <h4 style="font-family:farhang">
+                        امنیت</h4>
+                    <p style="font-family:vazir">
+                        فروش امن رو تجربه کن </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="box">
+                <div class="our-services backups">
+                    <div class="icon"> <img src="https://i.imgur.com/vdH9LKi.png"> </div>
+               <h4 style="font-family:farhang">
+                        بدون کارمزد</h4>
+                   <p style="font-family:vazir">فروش کالا بدون دریافت کارمزد
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box">
+                <div class="our-services ssl">
+                    <div class="icon"> <img src="https://i.imgur.com/v6OnUqu.png"> </div>
+                 <h4 style="font-family:farhang">
+                        پشتیبانی </h4>
+                   <p style="font-family:vazir">
+                        پشتیبانی فنی 24 ساعته</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="box">
+                <div class="our-services database">
+                    <div class="icon"> <img src="https://i.imgur.com/VzjZw9M.png"> </div>
+                           <h4 style="font-family:farhang">
+                        اضافه کردن کالا </h4>
+                          <p style="font-family:vazir">
+                        بدون محدودیت
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section id="cta" class="cta">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-start">
+            <h3 style="font-family: farhang">به اینستاگرام ما سر زده ایی؟</h3>
+            <p style="font-family: farhang">پیگیر ما باش</p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="https://instagram.com/shopeton.ir" style="font-family: farhang">دیدن</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <section class="page-add">
+        <div class="container">
+            <h3 style="font-family: titr1;text-align: center">
+                <svg xmlns="http://www.w3.org/2000/svg" style="color:green" width="30" height="30" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16">
+  <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
+</svg>
+محصولات    
+</h3>
+
+                <hr>
+        </div>
+    </section>
+    
+    
+
+
+    <!--<section class="categories-page spad">-->
+    <!--    <div class="container">-->
+    <!--        <div class="categories-controls">-->
+    <!--            <div class="row">-->
+    <!--                <div class="col-lg-12">-->
+    <!--                    <div class="categories-filter">-->
+    <!--                        <div class="cf-left">-->
+    <!--                            <form  method="POST" action="{% url 'home' %}">-->
+    <!--                                     {% csrf_token %}-->
+
+
+
+    <!--                                   <div class="form-group">-->
+    <!--                                       {% if exists %}-->
+    <!--                                       <button class="btn btn-success" type="submit"  style="font-family: farhang;font-size: 16px" name="action" value='exists'>-->
+    <!--                                                    موجود باشد-->
+
+    <!--                                       </button>-->
+    <!--                                        {% else %}-->
+    <!--                                               <button class="btn btn-outline-info" type="submit"  style="font-family: farhang;font-size: 16px" name="action" value='exists'>-->
+    <!--                                                     موجود باشد-->
+    <!--                                       </button>-->
+    <!--                                        {% endif %}-->
+
+    <!--                                        {% if rate_p %}-->
+    <!--                                             <button class="btn btn-success" type="submit"  style="font-family: farhang;font-size: 16px" name="action" value='rate-product'>-->
+    <!--                                                           بالاترین امتیاز-->
+    <!--                                       </button>-->
+    <!--                                        {% else %}-->
+    <!--                                             <button class="btn btn-outline-info" type="submit"  style="font-family: farhang;font-size: 16px" name="action" value='rate-product'>-->
+    <!--                                                           بالاترین امتیاز-->
+    <!--                                       </button>-->
+    <!--                                        {% endif %}-->
+
+
+
+    <!--                                   </div>-->
+    <!--                            </form>-->
+    <!--                        </div>-->
+    <!--                        <div class="cf-right">-->
+    <!--                            <span style="font-family: vazir;font-size: 16px">محصولات فروشگاه ها</span>-->
+
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+   
+            
+     <div class="logo-section spad" style="padding-top: 0px;">
+        <div class="logo-items owl-carousel">
+
+ {% for x in all_product %}
+                   
+                        
+                        <div class="card">
+                            
+                            <a class="img-card" href="{% url 'one_product' x.pk %}">
+                                  <div id="yourContainer">
+                            <img src="{{ x.photo.url }}" style="border-radius:15px;width:100%;height:100%" />
+                            </div>
+                                <div class="top-left" style="background-color:red;border-radius:15px;padding:1%;color:white">{{ x.off }}%</div>
+                                     <div class="top-right" style="background-color:white;border-radius:15px;padding:1%;color:white">
+                                          {% for z in x.stars %}
+                                  <svg xmlns="http://www.w3.org/2000/svg" color="#F0A500" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+</svg>
+                            {% endfor %}
+
+
+                         {% for z in x.stars_left %}
+            <svg xmlns="http://www.w3.org/2000/svg" color="#F0A500" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+  <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+</svg>
+
+                            {% endfor %}
+
+
+   {% if x.verified %}
+                                            <svg style="color: cornflowerblue" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                                          <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+                                        </svg>
+{% endif %}
+
+                                     </div>
+                          </a>
+                  <div class="product-text" style="text-align:center">
+                            <h6 style="font-family: vazir;text-align:center;">{{ x.name }}</h6>
+
+                            <p style="color: green;font-family: vazir;text-align:center;font-size:18px;font-weight: 700;margin-bottom:0px">{{ x.last_comma }}|تومان</p>
+                            <del style="color: grey;font-family: vazir;text-align:center">{{ x.price_comma }}|تومان</del>
+                        </div>
+                         
+                        </div>
+             
+ {% endfor %}
+                
+        </div>
+    </div>
+    
+    
+    <section class="page-add">
+        <div class="container">
+            <h3 style="font-family: titr1;text-align: center"><svg xmlns="http://www.w3.org/2000/svg" style="color:#F05454" width="30" height="30" fill="currentColor" class="bi bi-shop-window" viewBox="0 0 16 16">
+  <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h12V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zm2 .5a.5.5 0 0 1 .5.5V13h8V9.5a.5.5 0 0 1 1 0V13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5a.5.5 0 0 1 .5-.5z"/>
+</svg> فروشگاه ها</h3>
+                <hr>
+        </div>
+    </section> 
+    
+
+  <div class="logo-section spad" style="padding-top: 0px;">
+        <div class="logo-items owl-carousel">
+
+ {% for x in all_shop %}
+                   
+                        
+                        <div class="card">
+                            
+                            <a class="img-card" href="{% url 'shop' x.slug %}">
+                                  <div id="yourContainer">
+                            <img src="{{ x.image_head1.url }}" style="border-radius:15px;width:100%;height:100%" />
+                            </div>
+                               {% if x.verified %}
+                                 <div class="top-left" style="background-color:white;border-radius:15px;padding:1%;color:white">
+                                        <svg style="color: cornflowerblue" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                                          <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+                                        </svg>  
+                                     
+                                     </div>
+                                       
+                                {% endif %}
+                              
+                                     <div class="top-right" style="background-color:white;border-radius:15px;padding:1%;color:white">
+                                          {% for z in x.stars %}
+                                  <svg xmlns="http://www.w3.org/2000/svg" color="#F0A500" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+</svg>
+                            {% endfor %}
+
+
+                         {% for z in x.stars_left %}
+            <svg xmlns="http://www.w3.org/2000/svg" color="#F0A500" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+  <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+</svg>
+
+                            {% endfor %}
+
+
+
+
+                                     </div>
+                          </a>
+                         <div class="product-text">
+                             <br>
+                            <h6 style="font-family: vazir;text-align:center;">{{ x.title }}</h6>
+                            <br>
+
+                        </div>
+                         
+                        </div>
+             
+ {% endfor %}
+                
+        </div>
+    </div>
+    
+    
+    
+<section id="cta" class="cta">
+      <div class="container">
+
+        <div >
+          <div class=" text-center text-lg-start">
+            <h3 style="font-family: titr1;margin-bottom:30px;font-size:40px">مزیت برای فروشندگان</h3>
+            <p style="font-family: vazir;color:wheat;font-size:23px"> بهره وری بالا و افزایش راندمان در عرضه</p>
+               <p style="font-family: vazir;color:wheat;font-size:23px">   فروش بیشتر </p>
+               <p style="font-family: vazir;color:wheat;font-size:23px">    صرفه جویی در مصرف منابع</p>
+                <p style="font-family: vazir;color:wheat;font-size:23px"> فروش 24 ساعته و از طریق درگاه پرداخت</p>
+
+          </div>
+          <div class=" text-center">
+            <a class="cta-btn align-middle" href="https://instagram.com/shopeton.ir" style="font-family: farhang">ساخت فروشگاه</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    
+
+    
+    
+    
+    
+{% if off %}
+<section class="page-add" style="margin-bottom:0px">
+        <div class="container">
+            <h3 style="font-family: titr1;text-align: center"><svg style="color:green" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
+  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
+  <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
+</svg>
+            کالاهای پر تخفیف
+            </h3>
+
+                <hr>
+        </div>
+    </section>
+
+<div class="logo-section spad" style="padding-top: 0px;">
+        <div class="logo-items owl-carousel">
+
+ {% for x in off %}
+                   
+                        
+                        <div class="card">
+                            
+                            <a class="img-card" href="{% url 'one_product' x.pk %}">
+                                  <div id="yourContainer">
+                            <img src="{{ x.photo.url }}" style="border-radius:15px;width:100%;height:100%" />
+                            </div>
+                                <div class="top-left" style="background-color:red;border-radius:15px;padding:1%;color:white">{{ x.off }}%</div>
+                                     <div class="top-right" style="background-color:white;border-radius:15px;padding:1%;color:white">
+                                          {% for z in x.stars %}
+                                  <svg xmlns="http://www.w3.org/2000/svg" color="#F0A500" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+</svg>
+                            {% endfor %}
+
+
+                         {% for z in x.stars_left %}
+            <svg xmlns="http://www.w3.org/2000/svg" color="#F0A500" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+  <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+</svg>
+
+                            {% endfor %}
+
+
+   {% if x.verified %}
+                                            <svg style="color: cornflowerblue" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                                          <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+                                        </svg>
+{% endif %}
+
+                                     </div>
+                          </a>
+                          <div class="product-text" style="text-align:center">
+                            <h6 style="font-family: vazir;text-align:center;">{{ x.name }}</h6>
+
+                            <p style="color: green;font-family: vazir;text-align:center;font-size:18px;font-weight: 700;margin-bottom:0px">{{ x.last_comma }}|تومان</p>
+                            <del style="color: grey;font-family: vazir;text-align:center">{{ x.price_comma }}|تومان</del>
+                        </div>
+                         
+                        </div>
+             
+ {% endfor %}
+                
+        </div>
+    </div>
+
+
+
+{% endif %}
+   
+
+
+
+{% if scategory %}
+<section class="page-add" style="margin-bottom:0px">
+        <div class="container">
+            <h2 style="font-family: titr1;text-align: center"><svg style="color:blue" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-tags" viewBox="0 0 16 16">
+  <path d="M3 2v4.586l7 7L14.586 9l-7-7H3zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2z"/>
+  <path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z"/>
+</svg>
+            دسته ها
+            </h2>
+
+                <hr>
+        </div>
+    </section>
+
+<div class="logo-section spad" style="padding-top: 0px;">
+        <div class="logo-items owl-carousel">
+
+ {% for x in scategory %}
+                   
+                        
+                        <div class="card">
+                            
+                            <a class="img-card" href="{% url 'sup-category' x.pk %}">
+                    
+                    <div id="yourContainer">
+        <img src="{{ x.photo.url }}" style="border-radius:15px;width:100%;height:100%" class="img-thumbnail" />
+</div>
+
+   
+                          </a>
+                         <div class="product-text">
+                            <h6 style="font-family: vazir;text-align:center;">{{ x.name }}</h6>
+
+                        </div>
+                    </div>
+             
+ {% endfor %}
+                
+        </div>
+    </div>
+
+
+{% endif %}
+   
+   
+   
+    
+<section id="cta" class="cta">
+      <div class="container">
+
+        <div >
+          <div class=" text-center text-lg-start">
+            <h3 style="font-family: titr1;margin-bottom:30px;font-size:40px">  مزیت برای خریداران </h3>
+            <p style="font-family: vazir;color:wheat;font-size:23px">   پیگیری خرید </p>
+               <p style="font-family: vazir;color:wheat;font-size:23px">   فروش بیشتر </p>
+               <p style="font-family: vazir;color:wheat;font-size:23px">قابلیت مقایسه ی کالا ها با هم</p>
+                <p style="font-family: vazir;color:wheat;font-size:23px">سرچ میان کلی کالا </p>
+
+          </div>
+          <div class="text-center">
+            <a class="cta-btn align-middle" href="https://instagram.com/shopeton.ir" style="font-family: farhang">ثبت نام</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    
+    
+    
+
+    
+    
+    
+<!--<section class="page-add" style="margin-bottom:0px">-->
+<!--        <div class="container">-->
+<!--            <h2 style="font-family: farhang;text-align: center"><svg style="color:orange"xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-hourglass-bottom" viewBox="0 0 16 16">-->
+<!--  <path d="M2 1.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1-.5-.5zm2.5.5v1a3.5 3.5 0 0 0 1.989 3.158c.533.256 1.011.791 1.011 1.491v.702s.18.149.5.149.5-.15.5-.15v-.7c0-.701.478-1.236 1.011-1.492A3.5 3.5 0 0 0 11.5 3V2h-7z"/>-->
+<!--</svg>-->
+<!--            دیگه وقتشه-->
+<!--            </h2>-->
+
+<!--                <hr>-->
+<!--        </div>-->
+<!--    </section>-->
+    
+<!--<div class="clock" style="background-color:#1684A7">-->
+<!--  <div class="outer-clock-face">-->
+<!--    <div class="marking marking-one"></div>-->
+<!--    <div class="marking marking-two"></div>-->
+<!--    <div class="marking marking-three"></div>-->
+<!--    <div class="marking marking-four"></div>-->
+<!--    <div class="inner-clock-face">-->
+<!--      <div class="hand hour-hand"></div>-->
+<!--      <div class="hand min-hand"></div>-->
+<!--      <div class="hand second-hand"></div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+{% if rare %}
+<section class="page-add" style="margin-bottom:0px">
+        <div class="container">
+            <h3 style="font-family: titr1;text-align: center"><svg style="color: #F0A500" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-radioactive" viewBox="0 0 16 16">
+  <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1ZM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Z"/>
+  <path d="M9.653 5.496A2.986 2.986 0 0 0 8 5c-.61 0-1.179.183-1.653.496L4.694 2.992A5.972 5.972 0 0 1 8 2c1.222 0 2.358.365 3.306.992L9.653 5.496Zm1.342 2.324a2.986 2.986 0 0 1-.884 2.312 3.01 3.01 0 0 1-.769.552l1.342 2.683c.57-.286 1.09-.66 1.538-1.103a5.986 5.986 0 0 0 1.767-4.624l-2.994.18Zm-5.679 5.548 1.342-2.684A3 3 0 0 1 5.005 7.82l-2.994-.18a6 6 0 0 0 3.306 5.728ZM10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/>
+</svg>
+            کالاهای ویژه
+            </h3>
+
+                <hr>
+        </div>
+    </section>
+
+<div class="logo-section spad" style="padding-top: 0px;">
+        <div class="logo-items owl-carousel">
+
+ {% for x in rare %}
+                   
+                        
+                        <div class="card">
+                            
+                            <a class="img-card" href="{% url 'one_product' x.pk %}">
+                                  <div id="yourContainer">
+                            <img src="{{ x.photo.url }}" style="border-radius:15px;width:100%;height:100%" />
+                            </div>
+                                <div class="top-left" style="background-color:red;border-radius:15px;padding:1%;color:white">{{ x.off }}%</div>
+                                     <div class="top-right" style="background-color:white;border-radius:15px;padding:1%;color:white">
+                                          {% for z in x.stars %}
+                                  <svg xmlns="http://www.w3.org/2000/svg" color="#F0A500" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+</svg>
+                            {% endfor %}
+
+
+                         {% for z in x.stars_left %}
+            <svg xmlns="http://www.w3.org/2000/svg" color="#F0A500" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+  <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+</svg>
+
+                            {% endfor %}
+
+
+   {% if x.verified %}
+                                            <svg style="color: cornflowerblue" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                                          <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+                                        </svg>
+{% endif %}
+
+                                     </div>
+                          </a>
+           <div class="product-text" style="text-align:center">
+                            <h6 style="font-family: vazir;text-align:center;">{{ x.name }}</h6>
+
+                            <p style="color: green;font-family: vazir;text-align:center;font-size:18px;font-weight: 700;margin-bottom:0px">{{ x.last_comma }}|تومان</p>
+                            <del style="color: grey;font-family: vazir;text-align:center">{{ x.price_comma }}|تومان</del>
+                        </div>
+                         
+                        </div>
+             
+ {% endfor %}
+                
+        </div>
+    </div>
+
+
+{% endif %}
+
+
+{% if hot %}
+
+<section class="page-add" style="margin-bottom:0px">
+        <div class="container">
+            <h3 style="font-family: titr1;text-align: center"><svg style="color: red" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-thermometer-high" viewBox="0 0 16 16">
+  <path d="M9.5 12.5a1.5 1.5 0 1 1-2-1.415V2.5a.5.5 0 0 1 1 0v8.585a1.5 1.5 0 0 1 1 1.415z"/>
+  <path d="M5.5 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0V2.5zM8 1a1.5 1.5 0 0 0-1.5 1.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0l-.166-.15V2.5A1.5 1.5 0 0 0 8 1z"/>
+</svg>
+            کالاهای داغ
+            </h3>
+
+                <hr>
+        </div>
+    </section>
+
+<div class="logo-section spad" style="padding-top: 0px;">
+        <div class="logo-items owl-carousel">
+
+ {% for x in hot %}
+                   
+                        
+                        <div class="card">
+                            
+                            <a class="img-card" href="{% url 'one_product' x.pk %}">
+                                  <div id="yourContainer">
+                            <img src="{{ x.photo.url }}" style="border-radius:15px;width:100%;height:100%" />
+                            </div>
+                                <div class="top-left" style="background-color:red;border-radius:15px;padding:1%;color:white">{{ x.off }}%</div>
+                                     <div class="top-right" style="background-color:white;border-radius:15px;padding:1%;color:white">
+                                          {% for z in x.stars %}
+                                  <svg xmlns="http://www.w3.org/2000/svg" color="#F0A500" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+</svg>
+                            {% endfor %}
+
+
+                         {% for z in x.stars_left %}
+            <svg xmlns="http://www.w3.org/2000/svg" color="#F0A500" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+  <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+</svg>
+
+                            {% endfor %}
+
+
+   {% if x.verified %}
+                                            <svg style="color: cornflowerblue" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                                          <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+                                        </svg>
+{% endif %}
+
+                                     </div>
+                          </a>
+                <div class="product-text" style="text-align:center">
+                            <h6 style="font-family: vazir;text-align:center;">{{ x.name }}</h6>
+
+                            <p style="color: green;font-family: vazir;text-align:center;font-size:18px;font-weight: 700;margin-bottom:0px">{{ x.last_comma }}|تومان</p>
+                            <del style="color: grey;font-family: vazir;text-align:center">{{ x.price_comma }}|تومان</del>
+                        </div>
+                         
+                        </div>
+             
+ {% endfor %}
+                
+        </div>
+    </div>
+
+
+{% endif %}
+
+
+<br>
+<br>
+
+
+    
+
+
+<section id="cta" class="cta">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-start">
+            <h3 style="font-family: farhang">فروشگاهت رو ساختی؟</h3>
+            <p style="font-family: farhang">بیشتر بفروش</p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="{% url 'register' %}" style="font-family: farhang">ساخت فروشگاه</a>
+          </div>
+        </div>
+
+      </div>
+</section>    
+    
+
+    
+    
+     
+<section class="page-add" style="margin-bottom:0px">
+        <div class="container">
+            <h3 style="font-family: titr1;text-align: center">
+                <svg xmlns="http://www.w3.org/2000/svg" style="color:yellow" width="30" height="30" fill="currentColor" class="bi bi-question-diamond" viewBox="0 0 16 16">
+  <path d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134z"/>
+  <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+</svg>
+                از کجا شروع کنم؟</h3>
+                <hr>
+        </div>
+    </section>
+
+  
+<div class="container bootdey">
+<div class="row gutters">
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+<div class="card" style="border:none">
+<div class="card-body" >
+<!-- Timeline start -->
+<div class="timeline">
+	<div class="timeline-row">
+
+		<div class="timeline-dot fb-bg"></div>
+		<div class="timeline-content">
+		<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-key" viewBox="0 0 16 16">
+  <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z"/>
+  <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+</svg>
+			<h4 style="color: white;font-family: farhang;text-align: right">ثبت نام کن</h4>
+			<p style="color: white;font-family: vazir;text-align: right">از طریق منوی صفحه وارد صفحه ی ثبت نام شو و ثبت نام کن</p>
+
+		</div>
+	</div>
+	<div class="timeline-row">
+
+		<div class="timeline-dot green-one-bg"></div>
+		<div class="timeline-content green-one">
+	<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-shop-window" viewBox="0 0 16 16">
+  <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h12V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zm2 .5a.5.5 0 0 1 .5.5V13h8V9.5a.5.5 0 0 1 1 0V13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5a.5.5 0 0 1 .5-.5z"/>
+</svg>
+				<h4 style="color: white;font-family: farhang;text-align: right">فروشگاهت رو بساز</h4>
+			<p style="color: white;font-family: vazir;text-align: right">ساخت فروشگاه رو از منو انتخاب و پر کن فرم رو</p>
+
+		</div>
+	</div>
+
+
+	<div class="timeline-row">
+
+		<div class="timeline-dot green-four-bg"></div>
+		<div class="timeline-content green-four">
+			<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
+  <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"/>
+  <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+</svg>
+					<h4 style="color: white;font-family: farhang;text-align: right">محصولاتت رو اضافه کن</h4>
+			<p style="color: white;font-family: vazir;text-align: right">بعد از ساخت فروشگاه روی ساخت محصول کلیک کن و پر کن فرم هارو</p>
+
+		</div>
+	</div>
+	<div class="timeline-row">
+
+		<div class="timeline-dot teal-bg"></div>
+		<div class="timeline-content teal">
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-watch" viewBox="0 0 16 16">
+  <path d="M8.5 5a.5.5 0 0 0-1 0v2.5H6a.5.5 0 0 0 0 1h2a.5.5 0 0 0 .5-.5V5z"/>
+  <path d="M5.667 16C4.747 16 4 15.254 4 14.333v-1.86A5.985 5.985 0 0 1 2 8c0-1.777.772-3.374 2-4.472V1.667C4 .747 4.746 0 5.667 0h4.666C11.253 0 12 .746 12 1.667v1.86a5.99 5.99 0 0 1 1.918 3.48.502.502 0 0 1 .582.493v1a.5.5 0 0 1-.582.493A5.99 5.99 0 0 1 12 12.473v1.86c0 .92-.746 1.667-1.667 1.667H5.667zM13 8A5 5 0 1 0 3 8a5 5 0 0 0 10 0z"/>
+</svg>
+					<h4 style="color: white;font-family: farhang;text-align: right">تموم شد</h4>
+		
+
+		</div>
+	</div>
+
+</div>
+<!-- Timeline end -->
+</div>
+</div>
+</div>
+</div>
+</div>
+
+     <br>
+     <br>
+
+
+         <section class="page-add" style="margin-bottom:0px">
+        <div class="container">
+            <h3 style="font-family: titr1;text-align: center">
+                <svg xmlns="http://www.w3.org/2000/svg" style="color:orange" width="30" height="30" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+  <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+</svg>
+            سوالات شما
+                
+                </h3>
+                <hr>
+        </div>
+    </section>
+    
+    
+<div class="container" style="font-family:vazir;text-align:right">
+<div id="accordion" class="py-5">
+      <div class="card border-0">
+          <div class="card-header p-0 border-0" id="heading-239">
+          <button class="btn btn-link accordion-title border-0 collapse" data-toggle="collapse" data-target="#collapse-239" aria-expanded="true" aria-controls="#collapse-239"><i class="fas fa-minus text-center d-flex align-items-center justify-content-center h-100"></i>lorem header  1 </button>
+        </div>
+  
+    </div>
+            <div class="card border-0 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;" >
+                    <div class="card-header p-0 border-0" id="heading-240">
+                        <button class="btn btn-link accordion-title border-0 collapsed" data-toggle="collapse" data-target="#collapse-240" aria-expanded="false" aria-controls="#collapse-240">
+                            
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+</svg>
+واریز پول به چه صورت است؟                       </button>
+                    </div>
+                    <div id="collapse-240" class="collapse " aria-labelledby="heading-240" data-parent="#accordion">
+                        <div class="card-body accordion-body">
+                            
+                            <p style="font-family:vazir">
+                                بعد از تحویل کالا آنی واریز میشود
+                                
+                        </div>
+                    </div>
+                </div>
+                            <div class="card border-0 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                    <div class="card-header p-0 border-0" id="heading-241">
+                        <button class="btn btn-link accordion-title border-0 collapsed" data-toggle="collapse" data-target="#collapse-241" aria-expanded="false" aria-controls="#collapse-241">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+</svg> هزینه ی ساخت فروشگاه؟                     </button>
+                    </div>
+                    <div id="collapse-241" class="collapse " aria-labelledby="heading-241" data-parent="#accordion">
+                        <div class="card-body accordion-body">
+                          <p style="font-family:vazir">
+                                رایگان
+                                </p>
+                        </div>
+                    </div>
+                </div>
+                            <div class="card border-0 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                    <div class="card-header p-0 border-0" id="heading-242">
+                        <button class="btn btn-link accordion-title border-0 collapsed" data-toggle="collapse" data-target="#collapse-242" aria-expanded="false" aria-controls="#collapse-242">
+                                                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+</svg>   امکان وجود چند فروشگاه؟                       </button>
+                    </div>
+                    <div id="collapse-242" class="collapse " aria-labelledby="heading-242" data-parent="#accordion">
+                        <div class="card-body accordion-body">
+                             <p style="font-family:vazir">
+                               خیر امکانش نیست
+                               </p>
+                        </div>
+                    </div>
+                </div>
+                            <div class="card border-0 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                    <div class="card-header p-0 border-0" id="heading-243">
+                        <button class="btn btn-link accordion-title border-0 collapsed" data-toggle="collapse" data-target="#collapse-243" aria-expanded="false" aria-controls="#collapse-243">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+</svg>  چه تعداد کالا میتوان آپلود کرد؟                       </button>
+                    </div>
+                    <div id="collapse-243" class="collapse " aria-labelledby="heading-243" data-parent="#accordion">
+                        <div class="card-body accordion-body">
+                              <p style="font-family:vazir">
+                                بی شمار
+                           
+                           </p>
+                        </div>
+                    </div>
+                </div>
+                            <div class="card border-0 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                    <div class="card-header p-0 border-0" id="heading-244">
+                        <button class="btn btn-link accordion-title border-0 collapsed" data-toggle="collapse" data-target="#collapse-244" aria-expanded="false" aria-controls="#collapse-244">
+                                                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+</svg>   امکان تبلیغ برای فروش حضوری هست؟                       </button>
+                    </div>
+                    <div id="collapse-244" class="collapse " aria-labelledby="heading-244" data-parent="#accordion">
+                        <div class="card-body accordion-body">
+                             <p style="font-family:vazir">
+                              بله 
+                                
+                         </p>
+                        </div>
+                    </div>
+                </div>
+                            <div class="card border-0 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                    <div class="card-header p-0 border-0" id="heading-245">
+                        <button class="btn btn-link accordion-title border-0 collapsed" data-toggle="collapse" data-target="#collapse-245" aria-expanded="false" aria-controls="#collapse-245">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+</svg>  امکان داشتن لینک است؟                       </button>
+                    </div>
+                    <div id="collapse-245" class="collapse " aria-labelledby="heading-245" data-parent="#accordion">
+                        <div class="card-body accordion-body">
+                              <p style="font-family:vazir">
+                                حتما این لینک ها عکس و مشخصات فروشگاه شما رو هم نشون میدن
+                                </p>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+  
+</div>
+
+
+<section id="cta" class="cta">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-start">
+            <h3 style="font-family: farhang">درباره ی ما؟</h3>
+            <p style="font-family: farhang">بیشتر بدون</p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="{% url 'about' %}" style="font-family: farhang">درباره ی ما</a>
+          </div>
+        </div>
+
+      </div>
+</section>    
+    
+
+
+
+<!--         <section class="page-add" style="margin-bottom:0px">-->
+<!--        <div class="container">-->
+<!--            <h2 style="font-family: farhang;text-align: center">-->
+<!--                <svg xmlns="http://www.w3.org/2000/svg" style="color:red" width="50" height="50" fill="currentColor" class="bi bi-chat-square" viewBox="0 0 16 16">-->
+<!--  <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>-->
+<!--</svg>-->
+<!--                نظرات شما</h2>-->
+<!--                <hr>-->
+<!--        </div>-->
+<!--    </section>-->
+    
+<!--   <section class="pb-5">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-lg-10 col-xl-8 mx-auto">-->
+<!--                <div class="p-5 bg-white shadow rounded">-->
+                    <!-- Bootstrap carousel-->
+<!--                    <div class="carousel slide" id="carouselExampleIndicators" data-ride="carousel">-->
+                        <!-- Bootstrap carousel indicators [nav] -->
+<!--                        <ol class="carousel-indicators mb-0">-->
+<!--                            <li class="active" data-target="#carouselExampleIndicators" data-slide-to="0"></li>-->
+<!--                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>-->
+<!--                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>-->
+<!--                        </ol>-->
+
+
+                        <!-- Bootstrap inner [slides]-->
+<!--                        <div class="carousel-inner px-5 pb-4">-->
+                            <!-- Carousel slide-->
+<!--                            <div class="carousel-item active">-->
+<!--                                <div class="media"><img class="rounded-circle img-thumbnail" src="https://bootstrapious.com/i/snippets/sn-slider-quote/avatar-1.jpg" alt="" width="75">-->
+<!--                                    <div class="media-body ml-3">-->
+<!--                                        <blockquote class="blockquote border-0 p-0">-->
+<!--                                            <p class="font-italic lead" style="text-align: right">-->
+
+<!--                                                محمد-->
+<!--                                            </p>-->
+<!--                                            <footer class="blockquote-footer">Someone famous in-->
+<!--                                                <cite title="Source Title">Source Title</cite>-->
+<!--                                            </footer>-->
+<!--                                        </blockquote>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+                            <!-- Carousel slide-->
+<!--                                  <div class="carousel-item ">-->
+<!--                                <div class="media"><img class="rounded-circle img-thumbnail" src="https://bootstrapious.com/i/snippets/sn-slider-quote/avatar-1.jpg" alt="" width="75">-->
+<!--                                    <div class="media-body ml-3">-->
+<!--                                        <blockquote class="blockquote border-0 p-0">-->
+<!--                                            <p class="font-italic lead" style="text-align: right">-->
+
+<!--                                                امیر-->
+<!--                                            </p>-->
+<!--                                            <footer class="blockquote-footer">Someone famous in-->
+<!--                                                <cite title="Source Title">Source Title</cite>-->
+<!--                                            </footer>-->
+<!--                                        </blockquote>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+
+                            <!-- Carousel slide-->
+<!--                               <div class="carousel-item ">-->
+<!--                                <div class="media"><img class="rounded-circle img-thumbnail" src="https://bootstrapious.com/i/snippets/sn-slider-quote/avatar-1.jpg" alt="" width="75">-->
+<!--                                    <div class="media-body ml-3">-->
+<!--                                        <blockquote class="blockquote border-0 p-0">-->
+<!--                                            <p class="font-italic lead" style="text-align: right">-->
+
+<!--                                                علی-->
+<!--                                            </p>-->
+<!--                                            <footer class="blockquote-footer">Someone famous in-->
+<!--                                                <cite title="Source Title">Source Title</cite>-->
+<!--                                            </footer>-->
+<!--                                        </blockquote>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+
+
+                        <!-- Bootstrap controls [dots]-->
+<!--                        <a class="carousel-control-prev width-auto" href="#carouselExampleIndicators" role="button" data-slide="prev">-->
+<!--                            <i class="fa fa-angle-left text-dark text-lg"></i>-->
+<!--                            <span class="sr-only">Previous</span>-->
+<!--                        </a>-->
+<!--                        <a class="carousel-control-next width-auto" href="#carouselExampleIndicators" role="button" data-slide="next">-->
+<!--                            <i class="fa fa-angle-right text-dark text-lg"></i>-->
+<!--                            <span class="sr-only">Next</span>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<!--     <div class="row" style="display:flex">-->
+<!--  <div class="column" style="flex: 33.33%;padding: 5px;">-->
+<!--    <img src="https://www.w3schools.com/howto/img_snow.jpg" alt="Snow" style="width:100%">-->
+<!--  </div>-->
+<!--  <div class="column" style="flex: 33.33%;padding: 5px;">-->
+<!--    <img src="https://www.w3schools.com/howto/img_snow.jpg" alt="Forest" style="width:100%">-->
+<!--  </div>-->
+<!--  <div class="column" style="flex: 33.33%;padding: 5px;"> -->
+<!--    <img src="https://www.w3schools.com/howto/img_snow.jpg" alt="Mountains" style="width:100%">-->
+<!--  </div>-->
+<!--</div> -->
+
+
+
+<!--<div class="row" style="display:flex">-->
+<!--  <div class="column" style="flex: 20%;padding: 5px;">-->
+<!--    <img src="https://www.w3schools.com/howto/img_snow.jpg" alt="Snow" style="width:100%">-->
+<!--  </div>-->
+<!--  <div class="column" style="flex: 20%;padding: 5px;">-->
+<!--    <img src="https://www.w3schools.com/howto/img_snow.jpg" alt="Forest" style="width:100%">-->
+<!--  </div>-->
+<!--  <div class="column" style="flex: 20%;padding: 5px;"> -->
+<!--    <img src="https://www.w3schools.com/howto/img_snow.jpg" alt="Mountains" style="width:100%">-->
+<!--  </div>-->
+  
+<!--    <div class="column" style="flex: 20%;padding: 5px;"> -->
+<!--    <img src="https://www.w3schools.com/howto/img_snow.jpg" alt="Mountains" style="width:100%">-->
+<!--  </div>-->
+<!--</div> -->
+
+
+    
+         <section class="page-add" style="margin:0px">
+        <div class="container">
+            <h3 style="font-family: titr1;text-align: center">
+                <svg xmlns="http://www.w3.org/2000/svg" style="color:green" width="30" height="30" fill="currentColor" class="bi bi-images" viewBox="0 0 16 16">
+  <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+  <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z"/>
+</svg>
+                گالری</h3>
+                <hr>
+        </div>
+    </section>
+
+    <div class="logo-section spad">
+        <div class="logo-items owl-carousel">
+
+                <img src="{% static 'img/banner/banner4.jpg' %}"  alt="" style="width:250px;height:200px;border-radius: 15px" >
+
+
+                <img src="{% static 'img/banner/banner5.jpg' %}"  alt="" style="width:250px;height:200px;border-radius: 15px">
+
+
+                <img src="{% static 'img/banner/banner6.jpg' %}"  alt="" style="width:250px;height:200px;border-radius: 15px">
+
+
+                <img src="{% static 'img/banner/banner7.jpg' %}"  alt="" style="width:250px;height:200px;border-radius: 15px">
+
+
+                <img src="{% static 'img/banner/banner8.jpg' %}"  alt="" style="width:250px;height:200px;border-radius: 15px">
+
+        </div>
+    </div>
+
+<style>
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+}
+
+
+.why-us .content {
+  padding: 60px 100px 0 100px;
+}
+
+.why-us .content h3 {
+  font-weight: 400;
+  font-size: 34px;
+  color: #1684A7;
+}
+
+.why-us .content h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.why-us .content p {
+  font-size: 15px;
+  color: #848484;
+}
+
+.why-us .img {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.why-us .accordion-list {
+  padding: 0 100px 60px 100px;
+}
+
+.why-us .accordion-list ul {
+  padding: 0;
+  list-style: none;
+}
+
+.why-us .accordion-list li + li {
+  margin-top: 15px;
+}
+
+.why-us .accordion-list li {
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.why-us .accordion-list a {
+  display: block;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  padding-right: 30px;
+  outline: none;
+  cursor: pointer;
+}
+
+.why-us .accordion-list span {
+  color: #47b2e4;
+  font-weight: 600;
+  font-size: 18px;
+  padding-right: 10px;
+}
+
+.why-us .accordion-list i {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.why-us .accordion-list p {
+  margin-bottom: 0;
+  padding: 10px 0 0 0;
+}
+
+.why-us .accordion-list .icon-show {
+  display: none;
+}
+
+.why-us .accordion-list a.collapsed {
+  color: #343a40;
+}
+
+.why-us .accordion-list a.collapsed:hover {
+  color: #47b2e4;
+}
+
+.why-us .accordion-list a.collapsed .icon-show {
+  display: inline-block;
+}
+
+.why-us .accordion-list a.collapsed .icon-close {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .why-us .content, .why-us .accordion-list {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .why-us .img {
+    min-height: 400px;
+  }
+  .why-us .content {
+    padding-top: 30px;
+  }
+  .why-us .accordion-list {
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 575px) {
+  .why-us .img {
+    min-height: 200px;
+  }
+}
+
+.about .content h3 {
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about .content ul li {
+  padding-left: 28px;
+  position: relative;
+}
+
+.about .content ul li + li {
+  margin-top: 10px;
+}
+
+.about .content ul i {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 20px;
+  color: #47b2e4;
+  line-height: 1;
+}
+
+.about .content p:last-child {
+  margin-bottom: 0;
+}
+
+.about .content .btn-learn-more {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 4px;
+  transition: 0.3s;
+  line-height: 1;
+  color: #47b2e4;
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+  margin-top: 6px;
+  border: 2px solid #47b2e4;
+}
+
+.about .content .btn-learn-more:hover {
+  background: #47b2e4;
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.faq .faq-list {
+  padding: 0 100px;
+}
+
+.faq .faq-list ul {
+  padding: 0;
+  list-style: none;
+}
+
+.faq .faq-list li + li {
+  margin-top: 15px;
+}
+
+.faq .faq-list li {
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+  position: relative;
+}
+
+.faq .faq-list a {
+  display: block;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  padding: 0 30px;
+  outline: none;
+  cursor: pointer;
+}
+
+.faq .faq-list .icon-help {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  left: 20px;
+  color: #47b2e4;
+}
+
+.faq .faq-list .icon-show, .faq .faq-list .icon-close {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.faq .faq-list p {
+  margin-bottom: 0;
+  padding: 10px 0 0 0;
+}
+
+.faq .faq-list .icon-show {
+  display: none;
+}
+
+.faq .faq-list a.collapsed {
+  color: #1684A7;
+  transition: 0.3s;
+}
+
+.faq .faq-list a.collapsed:hover {
+  color: #47b2e4;
+}
+
+.faq .faq-list a.collapsed .icon-show {
+  display: inline-block;
+}
+
+.faq .faq-list a.collapsed .icon-close {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .faq .faq-list {
+    padding: 0;
+  }
+}
+
+
+.cta {
+  background: linear-gradient(rgba(22, 132, 167, 0.9), rgba(22, 132, 167, 0.9)), url("../img/cta-bg.jpg") fixed center center;
+  background-size: cover;
+  padding: 120px 0;
+}
+
+.cta h3 {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.cta p {
+  color: #fff;
+}
+
+.cta .cta-btn {
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 40px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.cta .cta-btn:hover {
+  background: #47b2e4;
+  border: 2px solid #47b2e4;
+}
+
+@media (max-width: 1024px) {
+  .cta {
+    background-attachment: scroll;
+  }
+}
+
+@media (min-width: 769px) {
+  .cta .cta-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+
+#hero {
+  width: 100%;
+  height: 80vh;
+  background: #1684A7;
+}
+
+#hero .container {
+  padding-top: 72px;
+}
+
+#hero h1 {
+  margin: 0 0 10px 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #fff;
+}
+
+#hero h2 {
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 50px;
+  font-size: 24px;
+}
+
+#hero .btn-get-started {
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 28px 11px 28px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px 0 0 0;
+  color: #fff;
+  background: #47b2e4;
+}
+
+#hero .btn-get-started:hover {
+  background: #209dd8;
+}
+
+#hero .btn-watch-video {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+  margin: 10px 0 0 25px;
+  color: #fff;
+  line-height: 1;
+}
+
+#hero .btn-watch-video i {
+  line-height: 0;
+  color: #fff;
+  font-size: 32px;
+  transition: 0.3s;
+  margin-right: 8px;
+}
+
+#hero .btn-watch-video:hover i {
+  color: #47b2e4;
+}
+
+#hero .animated {
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+@media (max-width: 991px) {
+  #hero {
+    height: 100vh;
+    text-align: center;
+  }
+  #hero .animated {
+    -webkit-animation: none;
+    animation: none;
+  }
+  #hero .hero-img {
+    text-align: center;
+  }
+  #hero .hero-img img {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  #hero h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+  #hero .hero-img img {
+    width: 70%;
+  }
+}
+
+@media (max-width: 575px) {
+  #hero .hero-img img {
+    width: 80%;
+  }
+  #hero .btn-get-started {
+    font-size: 16px;
+    padding: 10px 24px 11px 24px;
+  }
+}
+
+@-webkit-keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+.clock {
+  width: 20rem;
+  height: 20rem;
+  border: 7px solid #545271;
+  border-radius: 50%;
+  margin: 50px auto;
+  position: relative;
+  padding: 2rem;
+  -webkit-box-shadow: 0 20px 30px rgba(104,75,106,0.65);
+  -moz-box-shadow: 0 20px 30px rgba(104,75,106,0.65);
+  box-shadow: 0 20px 30px rgba(104,75,106,0.65);
+  background: #545271;
+}
+
+.outer-clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background: #fefefc;
+  -webkit-box-shadow: 0 20px 10px rgba(62,47,63,0.45);
+  -moz-box-shadow: 0 20px 10px rgba(62,47,63,0.45);
+  box-shadow: 0 20px 10px rgba(62,47,63,0.45);
+  overflow: hidden;
+}
+
+.outer-clock-face::after {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform: rotate(90deg)
+}
+
+.outer-clock-face::before,
+.outer-clock-face::after,
+.outer-clock-face .marking{
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  background: #b8b8c5;
+  z-index: 0;
+  left: 49%;
+}
+
+.outer-clock-face .marking {
+  background: #bdbdcb;
+  width: 3px;
+}
+
+.outer-clock-face .marking.marking-one {
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  transform: rotate(30deg)
+}
+
+.outer-clock-face .marking.marking-two {
+  -webkit-transform: rotate(60deg);
+  -moz-transform: rotate(60deg);
+  transform: rotate(60deg)
+}
+
+.outer-clock-face .marking.marking-three {
+  -webkit-transform: rotate(120deg);
+  -moz-transform: rotate(120deg);
+  transform: rotate(120deg)
+}
+
+.outer-clock-face .marking.marking-four {
+  -webkit-transform: rotate(150deg);
+  -moz-transform: rotate(150deg);
+  transform: rotate(150deg)
+}
+
+.inner-clock-face {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background: #fefefc;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  z-index: 1;
+}
+
+.inner-clock-face::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 18px;
+  margin-left: -9px;
+  margin-top: -6px;
+  background: #4d4b63;
+  z-index: 11;
+}
+
+.hand {
+  width: 50%;
+  right: 50%;
+  height: 6px;
+  background: #61afff;
+  position: absolute;
+  top: 50%;
+  border-radius: 6px;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.hand.hour-hand {
+  width: 20%;
+  z-index: 3;
+}
+
+.hand.min-hand {
+  height: 3px;
+  z-index: 10;
+  width: 35%;
+}
+
+.hand.second-hand {
+  background: #ff5e5e;
+  width: 40%;
+}
+
+
+  [data-toggle="collapse"] i:before {  
+    content: "\f068";
+}
+  
+[data-toggle="collapse"].collapsed i:before {
+    content: "\f067";
+}
+#accordion {
+    .card-header{
+        margin-bottom: 8px;
+    }
+    .accordion-title{
+        position: relative;
+        display: block;
+        padding:8px 0 8px 50px;
+        background: #213744;
+        border-radius: 8px;
+        overflow: hidden;
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        width: 100%;
+        text-align: left;
+        transition: all .4s ease-in-out; 
+        i{
+            position: absolute;
+            width: 40px;
+            height: 100%;
+            left: 0;
+            top: 0;
+            color: #fff;
+            background: radial-gradient(rgba(#213744, .8), #213744);
+            text-align: center;
+            border-right: 1px solid transparent;
+        }
+        &:hover{
+            padding-left: 60px;
+            background: #213744;
+            color: #fff;
+            
+            i {
+                border-right: 1px solid #fff;
+            }
+        }
+    }
+    .accordion-body{
+        padding: 40px 55px;
+
+        
+        ul {
+            list-style: none;
+            margin-left: 0;
+            padding-left: 0;
+        }
+        
+        li {
+            padding-left: 1.2rem;
+            text-indent: -1.2rem;
+
+            &:before {
+                content: "\f10a";
+                padding-right: 5px;
+                font-family: "Flaticon";
+                font-size: 16px;
+                font-style: normal;
+                color: #213744;
+            }
+        }
+    }
+}
+
+#yourContainer {
+    /*width: 500px;*/
+    height: 250px;
+}
+
+#yourContainer img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Poppins|Ubuntu&display=swap');
+
+
+.box {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px
+}
+
+.our-services {
+    margin-top: 75px;
+    padding-bottom: 30px;
+    padding: 0 60px;
+    min-height: 198px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: all .4s ease-in-out;
+    box-shadow: 0 0 25px 0 rgba(20, 27, 202, .17)
+}
+
+.our-services .icon {
+    margin-bottom: -21px;
+    transform: translateY(-50%);
+    text-align: center
+}
+
+.our-services:hover h4,
+.our-services:hover p {
+    color: #fff
+}
+
+.speedup:hover {
+    box-shadow: 0 0 25px 0 rgba(20, 27, 201, .05);
+    cursor: pointer;
+    background-image: linear-gradient(-45deg, #fb0054 0%, #f55b2a 100%)
+}
+
+.settings:hover {
+    box-shadow: 0 0 25px 0 rgba(20, 27, 201, .05);
+    cursor: pointer;
+    background-image: linear-gradient(-45deg, #34b5bf 0%, #210c59 100%)
+}
+
+.privacy:hover {
+    box-shadow: 0 0 25px 0 rgba(20, 27, 201, .05);
+    cursor: pointer;
+    background-image: linear-gradient(-45deg, #3615e7 0%, #44a2f6 100%)
+}
+
+.backups:hover {
+    box-shadow: 0 0 25px 0 rgba(20, 27, 201, .05);
+    cursor: pointer;
+    background-image: linear-gradient(-45deg, #fc6a0e 0%, #fdb642 100%)
+}
+
+.ssl:hover {
+    box-shadow: 0 0 25px 0 rgba(20, 27, 201, .05);
+    cursor: pointer;
+    background-image: linear-gradient(-45deg, #8d40fb 0%, #5a57fb 100%)
+}
+
+.database:hover {
+    box-shadow: 0 0 25px 0 rgba(20, 27, 201, .05);
+    cursor: pointer;
+    background-image: linear-gradient(-45deg, #27b88d 0%, #22dd73 100%)
+}
+
+
+
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.timeline {
+    position: relative;
+    padding: 10px;
+    margin: 0 auto;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+.timeline:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -1px;
+    border-right: 2px dashed #c4d2e2;
+    height: 100%;
+    display: block;
+}
+
+.timeline-row {
+    padding-left: 50%;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-row .timeline-time {
+    position: absolute;
+    right: 50%;
+    top: 31px;
+    text-align: right;
+    margin-right: 20px;
+    color: #000000;
+    font-size: 1.5rem;
+}
+
+.timeline-row .timeline-time small {
+    display: block;
+    font-size: .8rem;
+    color: #8796af;
+}
+
+.timeline-row .timeline-content {
+    position: relative;
+    padding: 20px 30px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.timeline-row .timeline-content:after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    height: 3px;
+    width: 40px;
+}
+
+.timeline-row .timeline-content:before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: -50px;
+    width: 20px;
+    height: 20px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    z-index: 100;
+    background: #ffffff;
+    border: 2px dashed #c4d2e2;
+}
+
+.timeline-row .timeline-content h4 {
+    margin: 0 0 20px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 150%;
+}
+
+.timeline-row .timeline-content p {
+    margin-bottom: 30px;
+    line-height: 150%;
+}
+
+.timeline-row .timeline-content i {
+    font-size: 2rem;
+    color: #ffffff;
+    line-height: 100%;
+    padding: 10px;
+    border: 2px solid #ffffff;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.timeline-row .timeline-content .thumbs {
+    margin-bottom: 20px;
+}
+
+.timeline-row .timeline-content .thumbs img {
+    margin-bottom: 10px;
+}
+
+.timeline-row:nth-child(even) .timeline-content {
+    background-color: #ff5000;
+    /* Fallback Color */
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fc6d4c), to(#ff5000));
+    /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, #fc6d4c, #ff5000);
+    /* Chrome 10+, Saf5.1+, iOS 5+ */
+    background-image: -moz-linear-gradient(top, #fc6d4c, #ff5000);
+    /* FF3.6 */
+    background-image: -ms-linear-gradient(top, #fc6d4c, #ff5000);
+    /* IE10 */
+    background-image: -o-linear-gradient(top, #fc6d4c, #ff5000);
+    /* Opera 11.10+ */
+    background-image: linear-gradient(top, #fc6d4c, #ff5000);
+    margin-left: 40px;
+    text-align: left;
+}
+
+.timeline-row:nth-child(even) .timeline-content:after {
+    left: -39px;
+    border-right: 18px solid #ff5000;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.timeline-row:nth-child(even) .timeline-content:before {
+    left: -50px;
+    right: initial;
+}
+
+.timeline-row:nth-child(odd) {
+    padding-left: 0;
+    padding-right: 50%;
+}
+
+.timeline-row:nth-child(odd) .timeline-time {
+    right: auto;
+    left: 50%;
+    text-align: left;
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+.timeline-row:nth-child(odd) .timeline-content {
+    background-color: #5a99ee;
+    /* Fallback Color */
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#1379bb), to(#5a99ee));
+    /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, #1379bb, #5a99ee);
+    /* Chrome 10+, Saf5.1+, iOS 5+ */
+    background-image: -moz-linear-gradient(top, #1379bb, #5a99ee);
+    /* FF3.6 */
+    background-image: -ms-linear-gradient(top, #1379bb, #5a99ee);
+    /* IE10 */
+    background-image: -o-linear-gradient(top, #1379bb, #5a99ee);
+    /* Opera 11.10+ */
+    background-image: linear-gradient(top, #1379bb, #5a99ee);
+    margin-right: 40px;
+    margin-left: 0;
+    text-align: right;
+}
+
+.timeline-row:nth-child(odd) .timeline-content:after {
+    right: -39px;
+    border-left: 18px solid #1379bb;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+@media (max-width: 767px) {
+    .timeline {
+        padding: 15px 10px;
+    }
+    .timeline:after {
+        left: 28px;
+    }
+    .timeline .timeline-row {
+        padding-left: 0;
+        margin-bottom: 16px;
+    }
+    .timeline .timeline-row .timeline-time {
+        position: relative;
+        right: auto;
+        top: 0;
+        text-align: left;
+        margin: 0 0 6px 56px;
+    }
+    .timeline .timeline-row .timeline-time strong {
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .timeline .timeline-row .timeline-icon {
+        top: 52px;
+        left: -2px;
+        margin-left: 0;
+    }
+    .timeline .timeline-row .timeline-content {
+        padding: 15px;
+        margin-left: 56px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+    .timeline .timeline-row .timeline-content:after {
+        right: auto;
+        left: -39px;
+        top: 32px;
+    }
+    .timeline .timeline-row:nth-child(odd) {
+        padding-right: 0;
+    }
+    .timeline .timeline-row:nth-child(odd) .timeline-time {
+        position: relative;
+        right: auto;
+        left: auto;
+        top: 0;
+        text-align: left;
+        margin: 0 0 6px 56px;
+    }
+    .timeline .timeline-row:nth-child(odd) .timeline-content {
+        margin-right: 0;
+        margin-left: 55px;
+    }
+    .timeline .timeline-row:nth-child(odd) .timeline-content:after {
+        right: auto;
+        left: -39px;
+        top: 32px;
+        border-right: 18px solid #5a99ee;
+        border-left: inherit;
+    }
+    .timeline.animated .timeline-row:nth-child(odd) .timeline-content {
+        left: 20px;
+    }
+    .timeline.animated .timeline-row.active:nth-child(odd) .timeline-content {
+        left: 0;
+    }
+}
+
+.width-auto {
+    width: auto;
+}
+
+.text-lg {
+    font-size: 2rem;
+}
+
+.carousel-indicators li {
+    border: none;
+    background: #ccc;
+}
+
+.carousel-indicators li.active {
+    background: #28a745;
+}
+
+
+.centered {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
+
+{% endblock %}
+

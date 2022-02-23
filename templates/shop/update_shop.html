@@ -1,0 +1,445 @@
+{% extends "base/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-xl-9 mx-auto">
+        <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+
+          <div class="card-body p-6 p-sm-5" style="margin-left: 20px">
+            <h5 class="card-title text-center mb-5 fw-light fs-5" style="font-family: farhang">تغییر فروشگاه</h5>
+
+            <form method="POST" enctype="multipart/form-data" style="direction: rtl;font-family:vazir">
+                  {% csrf_token %}
+
+                        <div class="form-floating mb-3"style="text-align: right">
+
+                <label for="floatingInputUsername" style="text-align: right;font-family: vazir">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="color:red" width="16" height="16" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
+  <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+</svg>
+                    عنوان فروشگاه</label>
+                  <br>
+                  <br>
+                           {{ form.title }}
+              </div>
+
+
+                <div class="form-floating mb-3" style="text-align: right">
+
+                 <label for="floatingInputUsername" style="text-align: right;font-family: vazir">
+                     
+                                         <svg xmlns="http://www.w3.org/2000/svg" style="color:red" width="16" height="16" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
+  <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+</svg>
+تلفن</label>
+                    <br>
+                  <br>
+                        {{ form.phone }}
+              </div>
+                     <div class="form-floating mb-3" style="text-align: right">
+
+                <label for="floatingPasswordConfirm" style="text-align: right;font-family: vazir">تلفن نمایش داده شود؟</label>
+                    <br>
+                  <br>
+                        {{ form.phone_bool }}
+              </div>
+
+
+                          <div class="form-floating mb-3" style="text-align: right">
+
+                 <label for="floatingInputUsername" style="text-align: right;font-family: vazir">
+                     
+                     
+                                         <svg xmlns="http://www.w3.org/2000/svg" style="color:red" width="16" height="16" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
+  <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+</svg>
+
+                     عنوان سر تیتر</label>
+                          <br>
+                  <br>
+                        {{ form.head_title }}
+              </div>
+
+                      <div class="form-floating mb-3" style="text-align: right">
+
+                 <label for="floatingInputUsername" style="text-align: right;font-family: vazir">
+                     
+                                         <svg xmlns="http://www.w3.org/2000/svg" style="color:red" width="16" height="16" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
+  <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+</svg>
+
+                     توضیحات سر تیتر</label>
+                          <br>
+                  <br>
+                        {{ form.head_description }}
+              </div>
+
+
+
+
+                <div class="form-floating mb-3" style="text-align: right">
+
+                <label for="floatingPasswordConfirm" style="text-align: right;font-family: vazir">
+                    
+                    
+                                        <svg xmlns="http://www.w3.org/2000/svg" style="color:red" width="16" height="16" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
+  <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+</svg>عکس تیتر </label>
+                    <br>
+                  <br>
+                        {{ form.image_head1 }}
+              </div>
+
+
+
+
+                   <div class="form-floating mb-3" style="text-align: right">
+
+                <label for="floatingPasswordConfirm" style="text-align: right;font-family: vazir">                    <svg xmlns="http://www.w3.org/2000/svg" style="color:red" width="16" height="16" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
+  <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+</svg>آدرس فروشگاه</label>
+                       <br>
+                  <br>
+                        {{ form.address }}
+              </div>
+
+                   <div class="form-floating mb-3" style="text-align: right">
+
+                <label for="floatingPasswordConfirm" style="text-align: right;font-family: vazir">آدرس نشان داده شود؟</label>
+                       <br>
+                  <br>
+                        {{ form.address_bool }}
+              </div>
+
+                               <div class="form-floating mb-3" style="text-align: right">
+
+                <label for="floatingPasswordConfirm" style="text-align: right;font-family: vazir">                    <svg xmlns="http://www.w3.org/2000/svg" style="color:red" width="16" height="16" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
+  <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+</svg>عنوان اول چرا ما؟ (تخفیف های شما چقدر است؟)</label>
+                       <br>
+                  <br>
+                        {{ form.why_us1 }}
+              </div>
+
+
+ 
+
+                   <div class="form-floating mb-3" style="text-align: right">
+
+                <label for="floatingPasswordConfirm" style="text-align: right;font-family: vazir">                    <svg xmlns="http://www.w3.org/2000/svg" style="color:red" width="16" height="16" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
+  <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+</svg>عنوان دوم چرا ما؟(قیمت های شما مناسب است؟)</label>
+                       <br>
+                  <br>
+                        {{ form.why_us2 }}
+              </div>
+
+
+                   <div class="form-floating mb-3" style="text-align: right">
+
+                <label for="floatingPasswordConfirm" style="text-align: right;font-family: vazir">                    <svg xmlns="http://www.w3.org/2000/svg" style="color:red" width="16" height="16" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
+  <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+</svg>عنوان سوم چرا ما؟(نحوه ی تحویل چطور است؟)</label>
+                       <br>
+                  <br>
+                        {{ form.why_us3 }}
+              </div>
+
+
+
+                     <div class="form-floating mb-3" style="text-align: right">
+
+                <label for="floatingPasswordConfirm" style="text-align: right;font-family: vazir">                    <svg xmlns="http://www.w3.org/2000/svg" style="color:red" width="16" height="16" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
+  <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+</svg>عکس بنر اول</label>
+                       <br>
+                  <br>
+                        {{ form.image_banner1 }}
+              </div>
+
+
+                <div class="form-floating mb-3" style="text-align: right">
+
+                <label for="floatingPasswordConfirm" style="text-align: right;font-family: vazir">                    <svg xmlns="http://www.w3.org/2000/svg" style="color:red" width="16" height="16" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
+  <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+</svg>عکس بنر دوم</label>
+                       <br>
+                  <br>
+                        {{ form.image_banner2 }}
+              </div>
+
+
+                <div class="form-floating mb-3" style="text-align: right">
+
+                <label for="floatingPasswordConfirm" style="text-align: right;font-family: vazir">                    <svg xmlns="http://www.w3.org/2000/svg" style="color:red" width="16" height="16" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
+  <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+</svg>عکس بنر سوم</label>
+                       <br>
+                  <br>
+                        {{ form.image_banner3 }}
+              </div>
+
+
+
+
+                     <div class="form-floating mb-3" style="text-align: right">
+
+                <label for="floatingPasswordConfirm" style="text-align: right;font-family: vazir">                    <svg xmlns="http://www.w3.org/2000/svg" style="color:red" width="16" height="16" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
+  <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+</svg>عکس پوستر</label>
+                       <br>
+                  <br>
+                        {{ form.image_look  }}
+              </div>
+
+                <div class="form-floating mb-3" style="text-align: right">
+
+                <label for="floatingPasswordConfirm" style="text-align: right;font-family: vazir">                    <svg xmlns="http://www.w3.org/2000/svg" style="color:red" width="16" height="16" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
+  <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+</svg>عنوان پوستر</label>
+                       <br>
+                  <br>
+                        {{ form.title_look  }}
+              </div>
+
+                <div class="form-floating mb-3" style="text-align: right">
+
+                <label for="floatingPasswordConfirm" style="text-align: right;font-family: vazir">                    <svg xmlns="http://www.w3.org/2000/svg" style="color:red" width="16" height="16" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
+  <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+</svg>توضیحات پوستر</label>
+                       <br>
+                  <br>
+                        {{ form.description_look  }}
+              </div>
+
+
+
+                                  <div class="form-floating mb-3" style="text-align: right">
+
+                <label for="floatingPasswordConfirm" style="text-align: right;font-family: vazir">                    <svg xmlns="http://www.w3.org/2000/svg" style="color:red" width="16" height="16" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
+  <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
+</svg>
+  مشتری برای پیگیری خرید کجا مراجعه کند؟</label>
+                       <br>
+                  <br>
+                        {{ form.seller_info  }}
+              </div>
+
+
+
+                                  <div class="form-floating mb-3" style="text-align: right">
+
+                <label for="floatingPasswordConfirm" style="text-align: right;font-family: vazir">لینک پیجتون(اختیاری)</label>
+                       <br>
+                  <br>
+                        {{ form.head_link  }}
+              </div>
+              
+              
+              
+              
+                                  <div class="form-floating mb-3" style="text-align: right">
+
+                <label for="floatingPasswordConfirm" style="text-align: right;font-family: vazir">درباره ی فروشگاه</label>
+                       <br>
+                  <br>
+                        {{ form.about  }}
+              </div>
+              
+              
+
+
+
+
+              <div class="form-group">
+          <button class="btn btn-outline-info" type="submit"  style="font-family: farhang;font-size: 16px">
+        تغییر بده
+
+          </button>
+        </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<script>
+
+</script>
+
+    <style>
+
+body {
+    color: #000;
+    overflow-x: hidden;
+    height: 100%;
+    background: linear-gradient(-80deg, #304FFE 50%, #EEEEEE 50%);
+
+}
+
+.card0 {
+    box-shadow: 0px 4px 8px 0px #757575;
+    border-radius: 10px
+}
+
+.card1 {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px
+}
+
+.logo {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-top: 20px;
+    margin-left: 25px
+}
+
+.image {
+    width: 300px;
+    height: 300px
+}
+
+.card2 {
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px
+}
+
+.login {
+    cursor: pointer
+}
+
+.fa-google {
+    background-color: #fff;
+    color: #df4b37;
+    padding: 10px 12px;
+    font-size: 20px
+}
+
+.fa-facebook {
+    background-color: #fff;
+    color: #3b5998;
+    padding: 10px 15px;
+    font-size: 20px
+}
+
+.google {
+    background-color: #df4b37;
+    color: #fff;
+    padding: 3px 0px 3px 3px;
+    border-radius: 2px;
+    cursor: pointer
+}
+
+.fb {
+    background-color: #3b5998;
+    color: #fff;
+    padding: 3px 0px 3px 3px;
+    border-radius: 2px;
+    cursor: pointer
+}
+
+.line {
+    height: 1px;
+    width: 45%;
+    background-color: #E0E0E0;
+    margin-top: 10px
+}
+
+.or {
+    width: 10%
+}
+
+.text-sm {
+    font-size: 14px !important
+}
+
+input,
+textarea {
+    padding: 10px 12px 10px 12px;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background-color: #ECEFF1
+}
+
+input:focus,
+textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #304FFE;
+    outline-width: 0
+}
+
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
+
+.btn-blue {
+    background-color: #304FFE;
+    width: 100%;
+    color: #fff;
+    border-radius: 6px
+}
+
+.btn-blue:hover {
+    background-color: #0D47A1;
+    cursor: pointer
+}
+
+@media screen and (max-width: 991px) {
+    .card1 {
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 10px
+    }
+
+    .card2 {
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 0px
+    }
+}
+
+.card-img-left {
+  width: 45%;
+  /* Link to your background image using in the property below! */
+
+  background-size: cover;
+}
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+}
+
+.btn-google {
+  color: white !important;
+  background-color: #ea4335;
+}
+
+.btn-facebook {
+  color: white !important;
+  background-color: #3b5998;
+}
+
+
+    </style>
+{% endblock %}

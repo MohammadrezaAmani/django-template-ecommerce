@@ -1,0 +1,92 @@
+
+
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block content %}
+<br>
+             <h3 style="font-family:farhang;text-align:center"><svg style="color:#4389fa" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-tags" viewBox="0 0 16 16">
+  <path d="M3 2v4.586l7 7L14.586 9l-7-7H3zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2z"/>
+  <path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z"/>
+</svg> {{ sup.name }}</h3>
+                    <hr style="background-color:white">
+                    <br>
+            <section class="page-section bg-dark text-white">
+            <div class="container px-4 px-lg-5 text-center">
+                <br>
+            
+            </div>
+        </section>        
+    <div class="container-fluid p-0">
+                <div class="row g-0" style="margin-right:0px;">
+
+                      {% for x in sup.categories.all %}
+
+                    <div class="col-lg-4 col-sm-6" style="padding: 0px">
+                       
+                           <a href="{% url 'category' x.pk %}">
+                            <img class="img-fluid" src="{{ x.photo.url }}" alt="..."  style="width: 738px;height: 430px;">
+                    <div style="font-family: farhang;font-size: 24px;color:white" class="centered">{{ x.name }}</div>
+                        </a>
+                    </div>
+                    {% endfor %}
+
+
+
+                </div>
+            </div>
+    <section class="page-section bg-dark text-white">
+            <div class="container px-4 px-lg-5 text-center">
+                <br>
+                    <br>
+            </div>
+        </section>
+        
+<style>
+    .container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
+
+
+{% endblock %}
+
+

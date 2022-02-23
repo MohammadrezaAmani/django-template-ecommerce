@@ -1,0 +1,544 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="enamad" content="150100"/>
+    <meta name="description" content="{{shop.title}}| shopeton|شاپتون ">
+    <meta property="og:image" content="{{ shop.image_head1.url }}" />
+    <meta name="keywords" content="shop shopeton market">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% if shop %}
+     <title>Shopeton | {{ shop.title }}</title>
+           
+    {% else %}
+            <title>شاپتون | Shopeton</title>
+    {% endif %}
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet"  href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet"  href="{% static 'css/nice-select.css' %}"  type="text/css">
+    <link rel="stylesheet"  href="{% static 'css/owl.carousel.min.css' %}"  type="text/css">
+    <link rel="stylesheet"  href="{% static 'css/magnific-popup.css' %}"  type="text/css">
+    <link rel="stylesheet"  href="{% static 'css/slicknav.min.css' %}"  type="text/css">
+    <link rel="stylesheet"  href="{% static 'css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <!--<div id="preloder">-->
+    <!--    <div class="loader"></div>-->
+    <!--</div>-->
+
+    <!-- Search model -->
+	<!--<div class="search-model">-->
+	<!--	<div class="h-100 d-flex align-items-center justify-content-center">-->
+	<!--		<div class="search-close-switch">+</div>-->
+	<!--		<form class="search-model-form" action = "{% url 'search' %}" method = "POST">-->
+ <!--                   {% csrf_token %}-->
+	<!--			<input style="font-family: vazir;text-align: right;direction: rtl" type="text" id="search-input" placeholder="بسرچ..." name="action" >-->
+	<!--		</form>-->
+	<!--	</div>-->
+	<!--</div>-->
+	<!-- Search model end -->
+
+    <!-- Header Section Begin -->
+ <!--   <header class="header-section">-->
+ <!--       <div class="container-fluid">-->
+ <!--           <div class="inner-header">-->
+
+
+ <!--                   <a href="{% url 'home' %}"><img style="width: 130px;height: 40px" src="{% static 'img/logo2.png' %}" alt=""></a>-->
+
+ <!--               <div class="header-right">-->
+ <!--                   <img src="{% static 'img/icons/search.png' %}" alt="" class="search-trigger">-->
+
+ <!--                   <a href="{% url 'my_profile' %}" >-->
+ <!--                       <img src="{% static 'img/icons/man.png' %}" alt="">-->
+ <!--                   </a>-->
+
+
+ <!--                   <a href="{% url 'cart' %}" >-->
+ <!--                       <img src="{% static 'img/icons/bag.png' %}" alt="">-->
+ <!--                       <span>{{ wish }}</span>-->
+ <!--                   </a>-->
+
+ <!--               </div>-->
+ <!--               <div class="user-access">-->
+ <!--                   {% if login %}-->
+ <!--                     <a  href="{% url 'logout' %}">خروج</a>-->
+ <!--                   {% else %}-->
+ <!--                         <a href="{% url 'register' %}">ثبت نام</a>-->
+ <!--                   <a href="{% url 'login' %}" class="in">ورود</a>-->
+ <!--                   {% endif %}-->
+
+ <!--               </div>-->
+ <!--               <nav class="main-menu mobile-menu">-->
+ <!--                   <ul>-->
+
+ <!--                       {% if owner %}-->
+
+
+ <!--                           <li><a href="{% url 'about' %}">درباره ی ما</a></li>-->
+ <!--                               <li><a href="{% url 'contact' %}">ارتباط با ما</a></li>-->
+ <!--                             <li><a  href="{% url 'my_ticket' %}">تیکت</a></li>-->
+ <!--                                  <li><a href="{% url 'add_product' %}">ساخت محصول</a></li>-->
+
+ <!--                           <li><a href="{% url 'update_shop' %}">تغییر فروشگاه</a></li>-->
+ <!--                           <li><a href="{% url 'shop' my_shop.slug %}">فروشگاه من</a></li>-->
+ <!--                               <li><a class="active" href="{% url 'home' %}">خانه</a></li>-->
+
+
+
+ <!--                       {% else %}-->
+
+ <!--                                <li><a class="active" href="{% url 'home' %}">خانه</a></li>-->
+
+ <!--                       <li><a href="{% url 'contact' %}">ارتباط با ما</a></li>-->
+ <!--                       <li><a href="{% url 'about' %}">درباره ی ما</a></li>-->
+ <!--                           {% if login %}-->
+ <!--                       <li><a href="{% url 'add_shop' %}">ساخت فروشگاه</a></li>-->
+ <!--                               {% endif %}-->
+ <!--                       {% endif %}-->
+
+
+ <!--                   </ul>-->
+ <!--               </nav>-->
+ <!--           </div>-->
+ <!--       </div>-->
+ <!--   </header>-->
+	<div class="search-model">
+		<div class="h-100 d-flex align-items-center justify-content-center">
+			<div class="search-close-switch">+</div>
+			<form class="search-model-form" action = "{% url 'search' %}" method = "POST">
+                    {% csrf_token %}
+				<input style="font-family: vazir;text-align: right;direction: rtl" type="text" id="search-input" placeholder="بسرچ..." name="action" >
+			</form>
+		</div>
+	</div>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm fixed-top">
+    <a href="{% url 'home' %}"><img style="width: 130px;height: 40px" src="{% static 'img/logo2.png' %}" alt=""></a>
+    
+  <button type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+  <div id="navbarContent" class="collapse navbar-collapse">
+    <ul class="navbar-nav mx-auto" style="text-align: right">
+      <!-- Megamenu-->
+        {#            category#}
+            <li class="nav-item dropdown megamenu">
+          <a id="megamneu" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle font-weight-bold text-uppercase">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-tags" viewBox="0 0 16 16">
+  <path d="M3 2v4.586l7 7L14.586 9l-7-7H3zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2z"/>
+  <path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z"/>
+</svg>
+              دسته ها
+      </a>
+        <div aria-labelledby="megamneu" class="dropdown-menu border-0 p-0 m-0">
+          <div class="container">
+            <div class="row bg-white rounded-0 m-0 shadow-sm">
+              <div class="col-lg-5 col-xl-4 px-0 d-none d-lg-block" style="background: center center url({% static 'img/banner/banner3.jpg' %})no-repeat; background-size: cover;"></div>
+              <div class="col-lg-7 col-xl-8">
+                <div class="p-4" style="text-align:right">
+                  <div class="row">
+                      {% for x in scategory %}
+                      <div class="col-lg-6 mb-4">
+                          <h6 class="font-weight-bold text-uppercase" style="font-family: vazir"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M9.224 1.553a.5.5 0 0 1 .223.67L6.56 8l2.888 5.776a.5.5 0 1 1-.894.448l-3-6a.5.5 0 0 1 0-.448l3-6a.5.5 0 0 1 .67-.223z"/>
+</svg><a href="{% url 'sup-category' x.pk  %}" style="color:black"> {{ x.name }} </a><span style="font-size:20px">{{ x.svg|safe }}</span></h6>
+                          <!--<ul class="list-unstyled">-->
+                          <!--    {% for y in x.categories.all %}-->
+                          <!--  <li class="nav-item"><a href="" class="nav-link text-small pb-0" style="font-family: vazir">{{ y.name }}</a></li>-->
+
+                          <!--    {% endfor %}-->
+                          <!--</ul>-->
+                        </div>
+
+                      {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+{#    search#}
+      <li class="nav-item">
+             <a class="nav-link font-weight-bold text-uppercase search-trigger">
+
+{#              <img src="{% static 'img/icons/search.png' %}" alt="" class="">#}
+                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search search-trigger" viewBox="0 0 16 16">
+  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+</svg>
+                     جست و جو
+        </a>
+      </li>
+       {#    cart#}
+                  <li class="nav-item">
+                    <a href="{% url 'cart' %}" class="nav-link font-weight-bold text-uppercase">
+
+                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16">
+              <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"/>
+            </svg>
+                       <span class="dot" style="background-color: #11d311;text-align: center" >{{ wish }}</span>
+                             سبد خرید
+                    </a>
+                  </li>
+
+        {% if login %}
+
+            {#    profile#}
+                  <li class="nav-item">
+                      <a  href="{% url 'my_profile' %}" class="nav-link font-weight-bold text-uppercase">
+
+                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+              <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+            </svg>
+                                پروفایل
+                      </a>
+                  </li>
+{#                logout#}
+                <li class="nav-item">
+                       <a  href="{% url 'logout' %}" class="nav-link font-weight-bold text-uppercase">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+  <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+</svg>
+                           خروج
+                       </a>
+                   </li>
+                   
+                                    <li class="nav-item">
+                      <a  href="{% url 'bought' %}" class="nav-link font-weight-bold text-uppercase">
+
+                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-wallet" viewBox="0 0 16 16">
+  <path d="M0 3a2 2 0 0 1 2-2h13.5a.5.5 0 0 1 0 1H15v2a1 1 0 0 1 1 1v8.5a1.5 1.5 0 0 1-1.5 1.5h-12A2.5 2.5 0 0 1 0 12.5V3zm1 1.732V12.5A1.5 1.5 0 0 0 2.5 14h12a.5.5 0 0 0 .5-.5V5H2a1.99 1.99 0 0 1-1-.268zM1 3a1 1 0 0 0 1 1h12V2H2a1 1 0 0 0-1 1z"/>
+</svg>
+                                خرید های من
+                      </a>
+                  </li>
+                  
+                {% if owner %}
+                
+                
+                                 <li class="nav-item">
+                      <a  href="{% url 'sold' %}" class="nav-link font-weight-bold text-uppercase">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-coin" viewBox="0 0 16 16">
+  <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9H5.5zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518l.087.02z"/>
+  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+  <path d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/>
+</svg>
+                                فروش های من
+                      </a>
+                  </li>
+                  
+                  
+{#                    ticket#}
+                    <li class="nav-item">
+                        <a  href="{% url 'my_ticket' %}" class="nav-link font-weight-bold text-uppercase">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-life-preserver" viewBox="0 0 16 16">
+  <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm6.43-5.228a7.025 7.025 0 0 1-3.658 3.658l-1.115-2.788a4.015 4.015 0 0 0 1.985-1.985l2.788 1.115zM5.228 14.43a7.025 7.025 0 0 1-3.658-3.658l2.788-1.115a4.015 4.015 0 0 0 1.985 1.985L5.228 14.43zm9.202-9.202-2.788 1.115a4.015 4.015 0 0 0-1.985-1.985l1.115-2.788a7.025 7.025 0 0 1 3.658 3.658zm-8.087-.87a4.015 4.015 0 0 0-1.985 1.985L1.57 5.228A7.025 7.025 0 0 1 5.228 1.57l1.115 2.788zM8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+</svg>
+                            تیکت</a>
+                    </li>
+{#                    add product#}
+                    <li class="nav-item">
+                        <a href="{% url 'add_product' %}" class="nav-link font-weight-bold text-uppercase">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16">
+  <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
+</svg>
+                            ساخت محصول
+                        </a>
+                    </li>
+{#                    update shop#}
+                    <li class="nav-item">
+                        <a href="{% url 'update_shop' %}" class="nav-link font-weight-bold text-uppercase">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+  <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+  <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+</svg>
+                            تغییر فروشگاه</a></li>
+{#                    shop#}
+                    <li class="nav-item">
+                        <a href="{% url 'shop' my_shop.slug %}" class="nav-link font-weight-bold text-uppercase">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-shop-window" viewBox="0 0 16 16">
+  <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h12V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zm2 .5a.5.5 0 0 1 .5.5V13h8V9.5a.5.5 0 0 1 1 0V13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5a.5.5 0 0 1 .5-.5z"/>
+</svg>
+                            فروشگاه من</a></li>
+
+                {% else %}
+{#                    add shop#}
+                    <li class="nav-item">
+                        <a href="{% url 'add_shop' %}" class="nav-link font-weight-bold text-uppercase">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-shop-window" viewBox="0 0 16 16">
+  <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h12V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zm2 .5a.5.5 0 0 1 .5.5V13h8V9.5a.5.5 0 0 1 1 0V13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5a.5.5 0 0 1 .5-.5z"/>
+</svg>
+                            ساخت فروشگاه</a>
+                    </li>
+
+{#                    add shop#}
+                    <li class="nav-item">
+                        <a href="{% url 'help' %}" class="nav-link font-weight-bold text-uppercase">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+  <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+</svg>
+                            آموزش ساخت فروشگاه</a>
+                    </li>
+                    
+                {% endif %}
+
+
+
+
+        {% else %}
+        {#                    help#}
+                    <li class="nav-item">
+                        <a href="{% url 'help' %}" class="nav-link font-weight-bold text-uppercase">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+  <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+</svg>
+                            آموزش ساخت فروشگاه</a>
+                    </li>
+                    
+    {#            login#}
+                  <li class="nav-item">
+                       <a  href="{% url 'login' %}" class="nav-link font-weight-bold text-uppercase">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-key" viewBox="0 0 16 16">
+  <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z"/>
+  <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+</svg>
+                           ورود
+                       </a>
+                   </li>
+    {#            register#}
+                  <li class="nav-item">
+                       <a  href="{% url 'register' %}" class="nav-link font-weight-bold text-uppercase">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+  <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"/>
+</svg>
+                           ثبت نام
+                       </a>
+                  </li>
+
+        {% endif %}
+        
+
+
+{#            contact#}
+            <li class="nav-item">
+                 <a href="{% url 'contact' %}" class="nav-link font-weight-bold text-uppercase">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+  <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+</svg>
+                     ارتباط با ما</a></li>
+{#            about#}
+            <li class="nav-item">
+                 <a href="{% url 'about' %}" class="nav-link font-weight-bold text-uppercase">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+</svg>
+                     درباره ی ما</a></li>
+
+{#            home#}
+            <li class="nav-item">
+                 <a href="{% url 'home' %}" class="nav-link font-weight-bold text-uppercase">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+</svg>
+                     خانه
+                 </a></li>
+
+
+    {% if login %}
+
+    {% else %}
+
+    {% endif %}
+
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
+<br>
+{% block content %}
+
+
+{% endblock %}
+
+
+
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section spad">
+        <div class="container">
+
+
+
+
+            <div class="footer-widget">
+                <div class="row">
+                    <!--<a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=246228&amp;Code=w5VcJ9JEIui9vWYKlh5C"><img referrerpolicy="origin" src="https://Trustseal.eNamad.ir/logo.aspx?id=246228&amp;Code=w5VcJ9JEIui9vWYKlh5C" alt="" style="cursor:pointer" id="w5VcJ9JEIui9vWYKlh5C"></a>-->
+<!--<img referrerpolicy='origin' id = 'nbqejzpejzpergvjesgtoeuk' style = 'cursor:pointer' onclick = 'window.open("https://logo.samandehi.ir/Verify.aspx?id=277308&p=uiwkjyoejyoexlaoobpdmcsi", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt = 'logo-samandehi' src = 'https://logo.samandehi.ir/logo.aspx?id=277308&p=odrfyndtyndtqftilymaaqgw' />-->
+                    <div class="col-lg-3 col-sm-6" >
+                        <div class="single-footer-widget" style="font-family: vazir;text-align: right">
+                            <h4 style="font-family: farhang">لینک های مفید</h4>
+                              <ul style="text-align: left">
+                                <li><a style="color: white"  href="{% url 'my_ticket' %}">تیکت/ اعلام مشکل</a></li>
+                                <li><a style="color: white"  href="{% url 'my_profile' %}">پروفایل</a></li>
+                                <li><a style="color: white"  href="{% url 'cart' %}">علایق</a></li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6" >
+                        <div class="single-footer-widget" style="font-family: vazir;text-align: right">
+                            <h4 style="font-family: farhang">خدمات ما</h4>
+                            <ul style="text-align: left">
+                                <li>برند سازی</li>
+                                <li>طراحی سایت</li>
+                                <li>طراحی لوگو</li>
+                                <li>ادمین پیج</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6" >
+                        <div class="single-footer-widget" style="font-family: vazir;text-align: right">
+                            <h4 style="font-family: farhang">اطلاعات ما</h4>
+                            <ul style="text-align: left">
+                                <li>+98 993 514 3194</li>
+                                <li>info@shopeton.ir</li>
+                                <!--<li>Aut.hafez.Tehran</li>-->
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="social-links-warp">
+
+
+<div class="container text-center pt-5">
+                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script><span style="font-family: vazir">
+                        ساخته شده با<svg style="color: red" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-activity" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z"/>
+</svg>در ایران</span> <i class="icon-heart color-danger" aria-hidden="true"></i>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            </div>
+
+
+		</div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+
+    <script src="  {% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="  {% static 'js/bootstrap.min.js' %}"></script>
+    <script src="  {% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="  {% static 'js/jquery.slicknav.js' %}"></script>
+    <script src="  {% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="  {% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="  {% static 'js/mixitup.min.js' %}"></script>
+    <script src="  {% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
+
+
+<style>
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.megamenu {
+  position: static;
+}
+
+.megamenu .dropdown-menu {
+  background: none;
+  border: none;
+  width: 100%;
+}
+
+/* The dropdown container */
+/*.dropdown {*/
+/*  float: left;*/
+/*  overflow: hidden;*/
+/*}*/
+
+/* Dropdown button */
+/*.dropdown .dropbtn {*/
+/*  font-size: 16px;*/
+/*  border: none;*/
+/*  outline: none;*/
+/*  color: white;*/
+/*  padding: 14px 16px;*/
+/*  background-color: inherit;*/
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+/*}*/
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+    a{
+        font-family: vazir;
+    }
+</style>
