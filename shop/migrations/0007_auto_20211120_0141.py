@@ -4,22 +4,21 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('shop', '0006_customuser_owner'),
+        ("shop", "0006_customuser_owner"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='myshop',
-            name='banner_description1',
+            model_name="myshop",
+            name="banner_description1",
         ),
         migrations.RemoveField(
-            model_name='myshop',
-            name='banner_description2',
+            model_name="myshop",
+            name="banner_description2",
         ),
         migrations.RemoveField(
-            model_name='myshop',
-            name='banner_description3',
+            model_name="myshop",
+            name="banner_description3",
         ),
     ]

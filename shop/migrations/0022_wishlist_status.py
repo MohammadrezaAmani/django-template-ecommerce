@@ -4,16 +4,26 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('shop', '0021_alter_wishlist_post_info'),
+        ("shop", "0021_alter_wishlist_post_info"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='wishlist',
-            name='status',
-            field=models.CharField(choices=[('کالا در حال آماده سازی برای ارسال است', 'کالا در حال آماده سازی برای ارسال است'), ('کالا تحویل پست داده شد', 'کالا تحویل پست داده شد')], default=1, max_length=100, verbose_name='وضعیت ارسال کالا'),
+            model_name="wishlist",
+            name="status",
+            field=models.CharField(
+                choices=[
+                    (
+                        "کالا در حال آماده سازی برای ارسال است",
+                        "کالا در حال آماده سازی برای ارسال است",
+                    ),
+                    ("کالا تحویل پست داده شد", "کالا تحویل پست داده شد"),
+                ],
+                default=1,
+                max_length=100,
+                verbose_name="وضعیت ارسال کالا",
+            ),
             preserve_default=False,
         ),
     ]

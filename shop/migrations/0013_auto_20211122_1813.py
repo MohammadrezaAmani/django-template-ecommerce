@@ -4,19 +4,18 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('shop', '0012_auto_20211122_1809'),
+        ("shop", "0012_auto_20211122_1809"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='myshop',
-            name='link_name',
+            model_name="myshop",
+            name="link_name",
         ),
         migrations.AlterField(
-            model_name='myshop',
-            name='head_link',
-            field=models.TextField(blank=True, verbose_name='لینک تیتر'),
+            model_name="myshop",
+            name="head_link",
+            field=models.TextField(blank=True, verbose_name="لینک تیتر"),
         ),
     ]

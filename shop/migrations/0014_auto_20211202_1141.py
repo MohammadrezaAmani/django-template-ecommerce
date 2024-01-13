@@ -4,25 +4,30 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('shop', '0013_auto_20211122_1813'),
+        ("shop", "0013_auto_20211122_1813"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='myshop',
-            name='why_us_d1',
-            field=models.CharField(blank=True, max_length=50, verbose_name='محتوا اول چرا ما'),
+            model_name="myshop",
+            name="why_us_d1",
+            field=models.CharField(
+                blank=True, max_length=50, verbose_name="محتوا اول چرا ما"
+            ),
         ),
         migrations.AlterField(
-            model_name='myshop',
-            name='why_us_d2',
-            field=models.CharField(blank=True, max_length=50, verbose_name='محتوا دوم چرا ما'),
+            model_name="myshop",
+            name="why_us_d2",
+            field=models.CharField(
+                blank=True, max_length=50, verbose_name="محتوا دوم چرا ما"
+            ),
         ),
         migrations.AlterField(
-            model_name='myshop',
-            name='why_us_d3',
-            field=models.CharField(blank=True, max_length=50, verbose_name='محتوا سوم چرا ما'),
+            model_name="myshop",
+            name="why_us_d3",
+            field=models.CharField(
+                blank=True, max_length=50, verbose_name="محتوا سوم چرا ما"
+            ),
         ),
     ]

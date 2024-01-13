@@ -1,1 +1,0 @@
-from shopeton.wsgi import application

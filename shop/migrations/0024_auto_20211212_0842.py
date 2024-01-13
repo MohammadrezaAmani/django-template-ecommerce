@@ -4,22 +4,21 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('shop', '0023_alter_wishlist_status'),
+        ("shop", "0023_alter_wishlist_status"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='myshop',
-            name='head1',
+            model_name="myshop",
+            name="head1",
         ),
         migrations.RemoveField(
-            model_name='myshop',
-            name='head2',
+            model_name="myshop",
+            name="head2",
         ),
         migrations.RemoveField(
-            model_name='myshop',
-            name='head3',
+            model_name="myshop",
+            name="head3",
         ),
     ]

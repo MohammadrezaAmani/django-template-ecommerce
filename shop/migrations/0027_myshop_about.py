@@ -4,16 +4,15 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('shop', '0026_postinfo_time_add'),
+        ("shop", "0026_postinfo_time_add"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='myshop',
-            name='about',
-            field=models.TextField(default=1, verbose_name='درباره ی فروشگاه'),
+            model_name="myshop",
+            name="about",
+            field=models.TextField(default=1, verbose_name="درباره ی فروشگاه"),
             preserve_default=False,
         ),
     ]

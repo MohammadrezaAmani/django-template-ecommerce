@@ -4,21 +4,20 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('shop', '0030_alter_customuser_email'),
+        ("shop", "0030_alter_customuser_email"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='customuser',
-            name='phone',
+            model_name="customuser",
+            name="phone",
             field=models.CharField(default=1, max_length=11),
             preserve_default=False,
         ),
         migrations.AddField(
-            model_name='customuser',
-            name='phone_active',
+            model_name="customuser",
+            name="phone_active",
             field=models.BooleanField(default=False),
         ),
     ]

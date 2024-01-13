@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('shop', '0007_auto_20211120_0141'),
+        ("shop", "0007_auto_20211120_0141"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='myshop',
-            name='verified',
+            model_name="myshop",
+            name="verified",
             field=models.BooleanField(default=False),
         ),
     ]

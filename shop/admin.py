@@ -1,6 +1,19 @@
 from django.contrib import admin
 
-from .models import myshop, CustomUser, contact_with_us, Comment_shop, ticket, Category, Comment, Product, wishlist,pakage_shop, Order,SupCategory,postinfo
+from .models import (
+    Category,
+    Comment,
+    Comment_shop,
+    CustomUser,
+    Order,
+    Product,
+    SupCategory,
+    contact_with_us,
+    myshop,
+    postinfo,
+    ticket,
+    wishlist,
+)
 
 admin.site.register(postinfo)
 admin.site.register(SupCategory)

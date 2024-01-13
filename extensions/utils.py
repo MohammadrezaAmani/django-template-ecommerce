@@ -1,5 +1,6 @@
 from . import jalali
 
+
 def persian_numbers_converter(str):
     numbers = {
         "0": "۰",
@@ -17,9 +18,12 @@ def persian_numbers_converter(str):
         str = str.replace(i, p)
     return str
 
+
 def jalali_converter(time):
     time_to_str = "{},{},{}".format(time.year, time.month, time.day)
     out = jalali.Gregorian(time_to_str).persian_tuple()
 
-    out_new = "{}/{}/{},ساعت{}:{}".format(out[0], out[1], out[2], time.hour, time.minute)
+    out_new = "{}/{}/{},ساعت{}:{}".format(
+        out[0], out[1], out[2], time.hour, time.minute
+    )
     return persian_numbers_converter(out_new)

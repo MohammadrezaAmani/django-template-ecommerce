@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('shop', '0005_comment_shop_contact_with_us_ticket'),
+        ("shop", "0005_comment_shop_contact_with_us_ticket"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='customuser',
-            name='owner',
+            model_name="customuser",
+            name="owner",
             field=models.BooleanField(default=False),
         ),
     ]
